@@ -1,0 +1,11 @@
+{
+  "name": "@spd/schema",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "joi": "^17.2.1"
+  },
+  "devDependencies": {
+    "@types/joi": "^14.3.4"
+  }
+}
