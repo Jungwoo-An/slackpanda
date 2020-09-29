@@ -1,0 +1,11 @@
+{
+  "name": "slackpanda",
+  "version": "0.1.0",
+  "private": true,
+  "repository": "https://github.com/Jungwoo-An/slackpanda",
+  "author": "Jungwoo-An <o1o9814@naver.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ]
+}
