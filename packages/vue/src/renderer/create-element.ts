@@ -1,6 +1,6 @@
-import { TagTypes, NodeTypes } from '@spd/shared';
+import { TagTypes, NodeTypes, IElement } from '@spd/shared';
 
-function createElement(tag: TagTypes) {
+function createElement(tag: TagTypes): IElement {
   return {
     type: NodeTypes.ELEMENT,
     children: [],
