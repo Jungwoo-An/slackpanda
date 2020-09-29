@@ -1,5 +1,9 @@
 {
   "name": "@spd/vue",
   "version": "0.1.0",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@spd/shared": "^0.1.0",
+    "vue": "^3.0.0"
+  }
 }
