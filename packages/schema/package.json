@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
+    "@spd/shared": "^0.1.0",
     "joi": "^17.2.1"
   },
   "devDependencies": {
