@@ -22,4 +22,5 @@ export const enum TagTypes {
 
   // Composition Objects
   TEXT = 'text',
+  OPTION = 'option',
 }
