@@ -1,5 +1,8 @@
 {
   "name": "@spd/serializer",
   "version": "0.1.0",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@spd/shared": "^0.1.0"
+  }
 }
