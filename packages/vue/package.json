@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
+    "@spd/core": "^0.1.0",
     "@spd/shared": "^0.1.0",
     "vue": "^3.0.0"
   }

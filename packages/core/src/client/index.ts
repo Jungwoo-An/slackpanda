@@ -1,1 +1,1 @@
-export * from './base';
+export { default as BaseClient } from './base';
