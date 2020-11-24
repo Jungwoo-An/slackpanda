@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+
 export const enum NodeTypes {
   TEXT = 'TEXT',
   ELEMENT = 'ELEMENT',

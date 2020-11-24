@@ -4,6 +4,7 @@ export interface IElement {
   type: NodeTypes.ELEMENT;
   tag: TagTypes;
   parentNode: IElement | null;
+  // eslint-disable-next-line no-use-before-define
   children: Node[];
   props: Record<string, any>;
   listeners: Record<string, Function[]>;
