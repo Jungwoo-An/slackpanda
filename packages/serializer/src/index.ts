@@ -1,5 +1,5 @@
 import { IElement, Node, NodeTypes, TagTypes } from '@spd/shared';
-import schema from '@spd/schema';
+import { schema } from '@spd/schema';
 
 import actions from './actions';
 import button from './button';
@@ -31,7 +31,7 @@ const serializers: Record<TagTypes, (node: IElement) => any> = {
   [TagTypes.OPTION]: option,
 };
 
-function serialize(node: Node) {
+export function serialize(node: Node) {
   if (node.type === NodeTypes.COMMENT) {
     // not supported
     return null;
@@ -48,5 +48,3 @@ function serialize(node: Node) {
 
   return serializers[node.tag](node);
 }
-
-export default serialize;

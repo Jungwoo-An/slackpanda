@@ -1,6 +1,6 @@
 import { IElement } from '@spd/shared';
 
-import serialize from '.';
+import { serialize } from '.';
 
 function actions(node: IElement) {
   return {

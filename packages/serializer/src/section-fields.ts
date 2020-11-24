@@ -1,6 +1,6 @@
 import { IElement } from '@spd/shared';
 
-import serialize from '.';
+import { serialize } from '.';
 
 function sectionFields(node: IElement) {
   return node.children.map(serialize);

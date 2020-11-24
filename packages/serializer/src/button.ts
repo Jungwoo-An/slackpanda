@@ -1,6 +1,6 @@
 import { IElement, NodeTypes } from '@spd/shared';
 
-import serialize from '.';
+import { serialize } from '.';
 
 function button(node: IElement) {
   const text = node.children.find((child) => child.type === NodeTypes.TEXT);

@@ -15,7 +15,7 @@ import selectMenu from './select-menu';
 import text from './text';
 import option from './option';
 
-const schema: Record<TagTypes, Joi.ObjectSchema> = {
+export const schema: Record<TagTypes, Joi.ObjectSchema> = {
   [TagTypes.ACTIONS]: actions,
   [TagTypes.BUTTON]: button,
   [TagTypes.CONTEXT]: context,
@@ -30,5 +30,3 @@ const schema: Record<TagTypes, Joi.ObjectSchema> = {
   [TagTypes.TEXT]: text,
   [TagTypes.OPTION]: option,
 };
-
-export default schema;

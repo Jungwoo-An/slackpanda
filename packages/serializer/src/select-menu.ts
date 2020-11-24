@@ -1,6 +1,6 @@
 import { IElement, NodeTypes, TagTypes } from '@spd/shared';
 
-import serialize from '.';
+import { serialize } from '.';
 
 function selectMenu(node: IElement) {
   const options = node.children.filter(

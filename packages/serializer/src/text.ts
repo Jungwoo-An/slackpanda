@@ -1,16 +1,16 @@
 import { IElement, NodeTypes } from '@spd/shared';
 
-import serialize from '.';
+import { serialize } from '.';
 
 function text(node: IElement) {
-  const text = node.children.find((child) => child.type === NodeTypes.TEXT);
-  if (!text) {
+  const textNode = node.children.find((child) => child.type === NodeTypes.TEXT);
+  if (!textNode) {
     return null;
   }
 
   return {
     type: node.props.type ?? 'plain_text',
-    text: serialize(text),
+    text: serialize(textNode),
     ...(node.props.verbatim && {
       verbatim: node.props.verbatim,
     }),

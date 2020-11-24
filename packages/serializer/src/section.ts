@@ -1,6 +1,6 @@
 import { IElement, NodeTypes, TagTypes } from '@spd/shared';
 
-import serialize from '.';
+import { serialize } from '.';
 
 function section(node: IElement) {
   const accessory = node.children.find(
