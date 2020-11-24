@@ -2,7 +2,7 @@ import { Component } from 'vue';
 import { NodeTypes, FixMe } from '@spd/shared';
 import { BaseClient } from '@spd/core';
 
-import serialize from '@spd/serializer';
+import { serialize } from '@spd/serializer';
 
 import { createApp } from '../renderer';
 
