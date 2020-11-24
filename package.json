@@ -5,6 +5,9 @@
   "repository": "https://github.com/Jungwoo-An/slackpanda",
   "author": "Jungwoo-An <o1o9814@naver.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "node ./scripts/build"
+  },
   "workspaces": [
     "packages/*"
   ],
