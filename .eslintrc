@@ -13,6 +13,7 @@
     "class-methods-use-this": "off",
     "global-require": "off",
     "no-underscore-dangle": "off",
+    "no-param-reassign": "off",
 
     "import/no-dynamic-require": "off",
     "import/no-extraneous-dependencies": "off",
