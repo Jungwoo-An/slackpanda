@@ -25,7 +25,7 @@ class Client extends BaseClient {
 
     app.mount(root);
 
-    return root.children;
+    return root.children as FixMe[];
   }
 
   public sendMessage(textOrComponent: string | Component, channel: string) {
@@ -37,8 +37,8 @@ class Client extends BaseClient {
       return;
     }
 
-    const output = this.render(textOrComponent);
-    const blocks = serialize(output);
+    const children = this.render(textOrComponent);
+    const blocks = children.map(serialize);
 
     try {
       this._instance.chat.postMessage({
