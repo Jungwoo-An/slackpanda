@@ -1,13 +1,14 @@
 const path = require('path');
 
 const { rollup } = require('rollup');
+const vue = require('rollup-plugin-vue');
 const typescript = require('rollup-plugin-typescript2');
 
 const packageJSON = require('../package.json');
 
 const { getWorkspacePackages } = require('./utils');
 
-const DEFUALT_ROLLUP_PLUGINS = [typescript()];
+const DEFUALT_ROLLUP_PLUGINS = [vue(), typescript()];
 
 async function build(packageDir) {
   const filename = path.basename(packageDir);
@@ -20,6 +21,7 @@ async function build(packageDir) {
   const compiler = await rollup({
     input: path.resolve(`./${packageDir}`, 'src/index.ts'),
     plugins: [...DEFUALT_ROLLUP_PLUGINS],
+    external: ['vue'],
   });
 
   compiler.write({
