@@ -1,5 +1,4 @@
 import { IElement, Node, NodeTypes, TagTypes } from '@spd/shared';
-import { schema } from '@spd/schema';
 
 import actions from './actions';
 import button from './button';
@@ -39,11 +38,6 @@ export function serialize(node: Node) {
 
   if (node.type === NodeTypes.TEXT) {
     return node.text ?? null;
-  }
-
-  const { error } = schema[node.tag].validate(node.props);
-  if (error) {
-    throw error;
   }
 
   return serializers[node.tag](node);
