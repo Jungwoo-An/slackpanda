@@ -1,5 +1,7 @@
 <template>
-  <button :action-id="actionId" :value="value" :url="url" :style="style" />
+  <button :action-id="actionId" :value="value" :url="url" :style="style">
+    <slot />
+  </button>
 </template>
 
 <script lang="ts">

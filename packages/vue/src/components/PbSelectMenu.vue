@@ -1,5 +1,5 @@
 <template>
-  <select-menu :actionId="actionId" :placeholder="placeholder" :value="value">
+  <select-menu :action-id="actionId" :placeholder="placeholder" :value="value">
     <slot />
   </select-menu>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <date-picker
-    :actionId="actionId"
+    :action-id="actionId"
     :placeholder="placeholder"
-    :initialDate="initialDate"
+    :initial-date="initialDate"
   />
 </template>
 
