@@ -7,6 +7,7 @@ function createElement(tag: TagTypes): IElement {
     listeners: {},
     props: {},
     parentNode: null,
+    root: null,
     tag,
   };
 }

@@ -10,6 +10,7 @@ function setElementText(el: IElement, text: string) {
     {
       type: NodeTypes.TEXT,
       parentNode: el,
+      root: el.root,
       text,
     },
   ];
