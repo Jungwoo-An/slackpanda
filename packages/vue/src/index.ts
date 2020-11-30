@@ -1,1 +1,2 @@
-export { default as Client } from './client';
+export * from './components';
+export * from './client';
