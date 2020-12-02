@@ -1,16 +1,21 @@
-import { UpdateObserver } from '@spd/core';
-
+import { updateObserver } from '../observers';
 import { scheduler } from '../scheduler';
 
 import { Client } from './client';
 
-export function createClient({ apiToken }: { apiToken: string }) {
-  const observer = new UpdateObserver();
-
-  scheduler.oncommit = (app) => observer.notify(app);
+// TODO :: Parameters typing
+export function createClient({
+  apiToken,
+  signingSecret,
+}: {
+  apiToken: string;
+  signingSecret?: string;
+}) {
+  scheduler.oncommit = (app) => updateObserver.notify(app);
 
   return new Client({
+    observer: updateObserver,
     apiToken,
-    observer,
+    signingSecret,
   });
 }
