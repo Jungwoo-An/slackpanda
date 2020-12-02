@@ -4,6 +4,7 @@
   "main": "./src/index.ts",
   "license": "MIT",
   "dependencies": {
+    "@slack/interactive-messages": "^1.7.0",
     "@slack/web-api": "^5.12.0"
   }
 }
