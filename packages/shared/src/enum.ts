@@ -7,6 +7,8 @@ export const enum NodeTypes {
 }
 
 export const enum TagTypes {
+  BLOCKS = 'blocks',
+
   // Blocks
   ACTIONS = 'actions',
   CONTEXT = 'context',
