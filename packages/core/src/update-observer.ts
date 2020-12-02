@@ -1,27 +1,10 @@
 import { FixMe } from '@spd/shared';
 
-export type Listener = (app: FixMe) => void;
+import { Observer } from './observer';
 
-export class UpdateObserver {
-  private _listeners: Listener[] = [];
+type Listener = (app: FixMe) => void;
 
-  subscribe(listener: Listener) {
-    this._listeners.push(listener);
-
-    return () => {
-      this.unsubscribe(listener);
-    };
-  }
-
-  unsubscribe(listener: Listener) {
-    const index = this._listeners.indexOf(listener);
-    if (index === -1) {
-      return;
-    }
-
-    this._listeners.splice(index, 1);
-  }
-
+export class UpdateObserver extends Observer<Listener> {
   notify(app: FixMe) {
     this._listeners.forEach((listener) => listener(app));
   }
