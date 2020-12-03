@@ -1,7 +1,6 @@
 import { Component } from 'vue';
-import { NodeTypes, FixMe, TagTypes, IElement } from '@spd/shared';
+import { NodeTypes, FixMe, TagTypes, IElement, ActionType } from '@spd/shared';
 import { BaseClient, UpdateObserver } from '@spd/core';
-
 import { serialize } from '@spd/serializer';
 
 import { createApp } from '../renderer';
@@ -37,7 +36,7 @@ export class Client extends BaseClient {
   }
 
   protected handleAction(payload: FixMe) {
-    const [action] = payload?.actions ?? [];
+    const [action] = (payload?.actions ?? []) as ActionType[];
     if (!action) {
       return;
     }

@@ -21,7 +21,7 @@ export const enum TagTypes {
 
   // Block Elements
   BUTTON = 'button',
-  DATE_PICKER = 'date-picker',
+  DATE_PICKER = 'datepicker',
   SELECT_MENU = 'select-menu',
 
   // Composition Objects
