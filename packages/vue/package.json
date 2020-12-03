@@ -5,6 +5,7 @@
   "dependencies": {
     "@spd/core": "^0.1.0",
     "@spd/shared": "^0.1.0",
+    "change-case": "^4.1.1",
     "vue": "^3.0.0"
   }
 }

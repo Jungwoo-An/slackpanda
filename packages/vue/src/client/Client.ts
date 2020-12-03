@@ -1,39 +1,53 @@
 import { Component } from 'vue';
-import { NodeTypes, FixMe } from '@spd/shared';
+import { NodeTypes, FixMe, TagTypes, IElement } from '@spd/shared';
 import { BaseClient, UpdateObserver } from '@spd/core';
 
 import { serialize } from '@spd/serializer';
 
 import { createApp } from '../renderer';
+import { ACTION_HANDLER_STORAGE } from '../storage';
 
 export class Client extends BaseClient {
   private _observer: UpdateObserver;
 
-  private _threads: Record<
+  private _threads: Map<
     FixMe,
     {
       channel: string;
       ts: string;
     }
-  > = {};
+  > = new Map();
 
   constructor({
     apiToken,
     observer,
+    signingSecret,
   }: {
     apiToken: string;
     observer: UpdateObserver;
+    signingSecret?: string;
   }) {
     super({
       apiToken,
+      signingSecret,
     });
 
     this._observer = observer;
     this._observer.subscribe(this.handleUpdate);
   }
 
+  protected handleAction(payload: FixMe) {
+    const [action] = payload?.actions ?? [];
+    if (!action) {
+      return;
+    }
+
+    const handler = ACTION_HANDLER_STORAGE.get(action.action_id);
+    handler?.(action);
+  }
+
   private handleUpdate = (app: FixMe) => {
-    const thread = this._threads[app];
+    const thread = this._threads.get(app);
     if (!thread) {
       return;
     }
@@ -49,11 +63,13 @@ export class Client extends BaseClient {
   };
 
   private render(component: Component) {
-    const root: FixMe = {
+    const root: IElement = {
       type: NodeTypes.ELEMENT,
       children: [],
-      tag: 'root',
+      tag: TagTypes.BLOCKS,
       parentNode: null,
+      root: null,
+      props: {},
     };
 
     const app = createApp(component);
@@ -76,7 +92,7 @@ export class Client extends BaseClient {
     }
 
     const app = this.render(textOrComponent);
-    const blocks = app.children.map(serialize);
+    const blocks = serialize(app);
 
     try {
       const {
@@ -88,10 +104,10 @@ export class Client extends BaseClient {
         channel,
       })) as FixMe;
 
-      this._threads[app] = {
+      this._threads.set(app, {
         channel: normalizedChannel,
         ts,
-      };
+      });
     } catch (e) {
       this.emit('error', e);
     }

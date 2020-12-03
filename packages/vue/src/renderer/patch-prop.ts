@@ -1,7 +1,8 @@
-import { IElement, EVENT_PREFIX } from '@spd/shared';
+import { IElement, ACTION_HANDLER_REGEX, generateNonce } from '@spd/shared';
 
 import { camelCase } from 'change-case';
 
+import { ACTION_HANDLER_STORAGE } from '../storage';
 import { scheduler } from '../scheduler';
 
 function patchProp(el: IElement, key: string, _prevValue: any, nextValue: any) {
@@ -11,9 +12,17 @@ function patchProp(el: IElement, key: string, _prevValue: any, nextValue: any) {
     scheduler.schedule(el.root);
   }
 
-  if (EVENT_PREFIX.test(camelizedKey)) {
-    const eventName = camelizedKey.replace(EVENT_PREFIX, '').toLowerCase();
-    (el.listeners[eventName] || (el.listeners[eventName] = [])).push(nextValue);
+  if (ACTION_HANDLER_REGEX.test(camelizedKey)) {
+    const nonce = generateNonce();
+
+    // Delete previous handler
+    ACTION_HANDLER_STORAGE.delete(key);
+
+    // Add new handler
+    ACTION_HANDLER_STORAGE.set(nonce, nextValue);
+
+    el.props.actionId = nonce;
+    el.props.value = nonce;
   } else {
     el.props[camelizedKey] = nextValue;
   }
