@@ -33,7 +33,7 @@ export abstract class BaseClient extends EventEmitter {
   private initAdapter(signingSecret: string) {
     const adapter = createMessageAdapter(signingSecret);
 
-    adapter.action(/.*/, this.handleAction);
+    adapter.action(/.*/, this.handleAction.bind(this));
 
     return adapter;
   }
