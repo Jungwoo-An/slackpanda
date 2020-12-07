@@ -35,6 +35,14 @@ export class Client extends BaseClient {
     this._observer.subscribe(this.handleUpdate);
   }
 
+  protected handleSubmission(payload: FixMe) {
+    console.log('SUBMIT', payload);
+  }
+
+  protected handleViewClosed(payload: FixMe) {
+    console.log('CLOSED', payload);
+  }
+
   protected handleAction(payload: FixMe) {
     const [action] = (payload?.actions ?? []) as ActionType[];
     if (!action) {

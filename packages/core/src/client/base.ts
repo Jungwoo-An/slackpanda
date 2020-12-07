@@ -28,10 +28,18 @@ export abstract class BaseClient extends EventEmitter {
     }
   }
 
+  protected abstract handleSubmission(payload: FixMe): void | Promise<void>;
+
+  protected abstract handleViewClosed(payload: FixMe): void | Promise<void>;
+
   protected abstract handleAction(payload: FixMe): void | Promise<void>;
 
   private initAdapter(signingSecret: string) {
     const adapter = createMessageAdapter(signingSecret);
+
+    adapter.viewSubmission(/.*/, this.handleSubmission.bind(this));
+
+    adapter.viewClosed(/.*/, this.handleViewClosed.bind(this));
 
     adapter.action(/.*/, this.handleAction.bind(this));
 
