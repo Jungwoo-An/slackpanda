@@ -4,7 +4,6 @@ function createComment(text: string): IComment {
   return {
     type: NodeTypes.COMMENT,
     parentNode: null,
-    root: null,
     comment: text,
   };
 }

@@ -6,7 +6,6 @@ function createElement(tag: TagTypes): IElement {
     children: [],
     props: {},
     parentNode: null,
-    root: null,
     tag,
   };
 }

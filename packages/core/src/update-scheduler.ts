@@ -29,6 +29,10 @@ export class UpdateScheduler {
   }
 
   schedule(app: FixMe) {
+    if (!app) {
+      return;
+    }
+
     if (this._queue.includes(app)) {
       return;
     }

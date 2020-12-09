@@ -59,13 +59,13 @@ export class Client extends BaseClient {
       return;
     }
 
-    const block = serialize(app);
+    const blocks = serialize(app);
 
     this._instance.chat.update({
       channel: thread.channel,
       ts: thread.ts,
       text: '',
-      blocks: [block],
+      blocks,
     });
   };
 
@@ -75,7 +75,6 @@ export class Client extends BaseClient {
       children: [],
       tag: TagTypes.BLOCKS,
       parentNode: null,
-      root: null,
       props: {},
     };
 

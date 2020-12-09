@@ -4,7 +4,6 @@ function createText(text: string): IText {
   return {
     type: NodeTypes.TEXT,
     parentNode: null,
-    root: null,
     text,
   };
 }

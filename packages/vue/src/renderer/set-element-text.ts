@@ -1,4 +1,4 @@
-import { IElement, NodeTypes } from '@spd/shared';
+import { findRoot, IElement, NodeTypes } from '@spd/shared';
 
 import { scheduler } from '../scheduler';
 
@@ -9,14 +9,13 @@ function setElementText(el: IElement, text: string) {
   }
 
   if (el.children?.length > 0) {
-    scheduler.schedule(el.root);
+    scheduler.schedule(findRoot(el));
   }
 
   el.children = [
     {
       type: NodeTypes.TEXT,
       parentNode: el,
-      root: el.root,
       text,
     },
   ];

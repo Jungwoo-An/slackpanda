@@ -17,7 +17,6 @@ function insert(child: Node, parent: IElement, anchor?: Node) {
   );
 
   child.parentNode = parent;
-  child.root = parent.root ?? parent;
 }
 
 export default insert;
