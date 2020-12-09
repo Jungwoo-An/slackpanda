@@ -27,4 +27,7 @@ export const enum TagTypes {
   // Composition Objects
   TEXT = 'text',
   OPTION = 'option',
+
+  // Surfaces
+  MODAL = 'modal',
 }

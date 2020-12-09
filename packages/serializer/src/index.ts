@@ -14,6 +14,7 @@ import selectMenu from './select-menu';
 import text from './text';
 import option from './option';
 import blocks from './blocks';
+import modal from './modal';
 
 const serializers: Record<TagTypes, (node: IElement) => any> = {
   [TagTypes.ACTIONS]: actions,
@@ -29,6 +30,7 @@ const serializers: Record<TagTypes, (node: IElement) => any> = {
   [TagTypes.SELECT_MENU]: selectMenu,
   [TagTypes.TEXT]: text,
   [TagTypes.OPTION]: option,
+  [TagTypes.MODAL]: modal,
   [TagTypes.BLOCKS]: blocks,
 };
 
