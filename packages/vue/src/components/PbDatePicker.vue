@@ -1,5 +1,5 @@
 <template>
-  <date-picker
+  <datepicker
     :action-id="actionId"
     :placeholder="placeholder"
     :initial-date="initialDate"
