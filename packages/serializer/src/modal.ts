@@ -5,6 +5,7 @@ import { serialize } from '.';
 function modal(node: IElement) {
   return {
     type: 'modal',
+    callback_id: node.props.actionId,
     title: {
       type: 'plain_text',
       text: node.props.title,
