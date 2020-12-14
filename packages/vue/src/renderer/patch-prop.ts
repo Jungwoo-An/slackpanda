@@ -1,9 +1,4 @@
-import {
-  IElement,
-  ACTION_HANDLER_REGEX,
-  generateNonce,
-  findRoot,
-} from '@spd/shared';
+import { IElement, ACTION_HANDLER_REGEX, findRoot } from '@spd/shared';
 
 import { camelCase } from 'change-case';
 
@@ -17,17 +12,17 @@ function patchProp(el: IElement, key: string, _prevValue: any, nextValue: any) {
     scheduler.schedule(findRoot(el));
   }
 
-  if (ACTION_HANDLER_REGEX.test(camelizedKey)) {
-    const nonce = generateNonce();
+  if (ACTION_HANDLER_REGEX.test(camelizedKey) && el.props.actionId) {
+    const { actionId } = el.props;
 
     // Delete previous handler
     ACTION_HANDLER_STORAGE.delete(key);
 
     // Add new handler
-    ACTION_HANDLER_STORAGE.set(nonce, nextValue);
+    ACTION_HANDLER_STORAGE.set(actionId, nextValue);
 
-    el.props.actionId = nonce;
-    el.props.value = nonce;
+    el.props.actionId = actionId;
+    el.props.value = actionId;
   } else {
     el.props[camelizedKey] = nextValue;
   }
