@@ -1,5 +1,13 @@
 import { Component } from 'vue';
-import { NodeTypes, FixMe, TagTypes, IElement, ActionType } from '@spd/shared';
+import {
+  NodeTypes,
+  FixMe,
+  TagTypes,
+  IElement,
+  ActionType,
+  omitModal,
+  findModal,
+} from '@spd/shared';
 import { BaseClient, UpdateObserver } from '@spd/core';
 import { serialize } from '@spd/serializer';
 
@@ -36,11 +44,15 @@ export class Client extends BaseClient {
   }
 
   protected handleSubmission(payload: FixMe) {
-    console.log('SUBMIT', payload);
+    const actionId = payload.view.callback_id;
+    const handler = ACTION_HANDLER_STORAGE.get(actionId);
+    handler?.(payload);
   }
 
   protected handleViewClosed(payload: FixMe) {
-    console.log('CLOSED', payload);
+    const actionId = payload.view.callback_id;
+    const handler = ACTION_HANDLER_STORAGE.get(actionId);
+    handler?.(payload);
   }
 
   protected handleAction(payload: FixMe) {
@@ -50,7 +62,7 @@ export class Client extends BaseClient {
     }
 
     const handler = ACTION_HANDLER_STORAGE.get(action.action_id);
-    handler?.(action);
+    handler?.(payload);
   }
 
   private handleUpdate = (app: FixMe) => {
@@ -59,7 +71,12 @@ export class Client extends BaseClient {
       return;
     }
 
-    const blocks = serialize(app);
+    const modal = findModal(app.children);
+
+    const blocks = serialize({
+      ...app,
+      children: omitModal(app.children),
+    });
 
     this._instance.chat.update({
       channel: thread.channel,
@@ -67,6 +84,16 @@ export class Client extends BaseClient {
       text: '',
       blocks,
     });
+
+    if (modal && modal.props.open) {
+      this._instance.views.open({
+        trigger_id: modal.props.triggerId,
+        view: {
+          notify_on_close: true,
+          ...serialize(modal),
+        },
+      });
+    }
   };
 
   private render(component: Component) {
@@ -98,7 +125,11 @@ export class Client extends BaseClient {
     }
 
     const app = this.render(textOrComponent);
-    const blocks = serialize(app);
+
+    const blocks = serialize({
+      ...app,
+      children: omitModal(app.children),
+    });
 
     try {
       const {
