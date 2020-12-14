@@ -8,13 +8,16 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { generateNonce } from '@spd/shared';
 
 export default defineComponent({
   name: 'PbDatePicker',
   props: {
     actionId: {
-      type: String,
-      required: true,
+      type: Object,
+      default() {
+        return generateNonce();
+      },
     },
     placeholder: {
       type: String,

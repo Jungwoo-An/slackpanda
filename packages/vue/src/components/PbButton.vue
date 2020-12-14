@@ -1,11 +1,17 @@
 <template>
-  <button :url="url" :style="style" @action="handleAction">
+  <button
+    :action-id="actionId"
+    :url="url"
+    :style="style"
+    @action="handleAction"
+  >
     <slot />
   </button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { ActionType, generateNonce } from '@spd/shared';
 
 export default defineComponent({
   name: 'PbButton',
@@ -16,10 +22,16 @@ export default defineComponent({
     style: {
       type: String,
     },
+    actionId: {
+      type: String,
+      default() {
+        return generateNonce();
+      },
+    },
   },
   setup(_, { emit }) {
-    function handleAction() {
-      emit('click');
+    function handleAction(payload: ActionType) {
+      emit('click', payload);
     }
 
     return {
