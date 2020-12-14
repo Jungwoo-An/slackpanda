@@ -11,3 +11,4 @@ export { default as PbSectionFields } from './PbSectionFields.vue';
 export { default as PbSectionAccessory } from './PbSectionAccessory.vue';
 export { default as PbSelectMenu } from './PbSelectMenu.vue';
 export { default as PbText } from './PbText.vue';
+export { default as PbModal } from './PbModal.vue';
