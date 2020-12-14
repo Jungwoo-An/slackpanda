@@ -1,5 +1,4 @@
 import { NodeTypes, TagTypes } from '../enum';
-import { FixMe } from '../types';
 
 export interface IElement {
   type: NodeTypes.ELEMENT;
