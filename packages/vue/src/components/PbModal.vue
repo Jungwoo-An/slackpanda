@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs } from 'vue';
 import { FixMe, generateNonce } from '@spd/shared';
 
 export default defineComponent({
@@ -35,7 +35,7 @@ export default defineComponent({
     },
     actionId: {
       type: String,
-      default() {
+      default: () => {
         return generateNonce();
       },
     },
@@ -43,19 +43,28 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    onSubmit: {
+      type: Function,
+    },
   },
-  setup(_, { emit }) {
-    const EMIT_TYPE: Record<string, string> = {
-      view_closed: 'close',
-      view_submission: 'submit',
-    };
+  setup(props, { emit }) {
+    const { onSubmit } = toRefs(props);
 
     function handleAction(payload: FixMe) {
       const { type } = payload;
 
-      const emitType = EMIT_TYPE[type];
-      if (emitType) {
-        emit(emitType);
+      switch (type) {
+        case 'view_closed': {
+          emit('close');
+          return undefined;
+        }
+
+        case 'view_submission': {
+          return onSubmit?.value?.();
+        }
+
+        default:
+          return undefined;
       }
     }
 

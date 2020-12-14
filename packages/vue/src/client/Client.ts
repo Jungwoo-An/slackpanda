@@ -46,7 +46,7 @@ export class Client extends BaseClient {
   protected handleSubmission(payload: FixMe) {
     const actionId = payload.view.callback_id;
     const handler = ACTION_HANDLER_STORAGE.get(actionId);
-    handler?.(payload);
+    return handler?.(payload);
   }
 
   protected handleViewClosed(payload: FixMe) {
