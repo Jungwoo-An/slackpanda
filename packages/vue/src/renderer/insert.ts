@@ -1,4 +1,5 @@
-import { Node, IElement, NodeTypes } from '@spd/shared';
+import { Node, IElement, NodeTypes, findRoot } from '@spd/shared';
+import { scheduler } from '../scheduler';
 
 function insert(child: Node, parent: IElement, anchor?: Node) {
   child.parentNode = parent;
@@ -17,6 +18,8 @@ function insert(child: Node, parent: IElement, anchor?: Node) {
     0,
     child
   );
+
+  scheduler.schedule(findRoot(child));
 }
 
 export default insert;
