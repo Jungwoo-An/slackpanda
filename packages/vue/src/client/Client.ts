@@ -141,6 +141,7 @@ export class Client extends BaseClient {
         channel,
       })) as FixMe;
 
+      (app as FixMe).initialized = true;
       this._threads.set(app, {
         channel: normalizedChannel,
         ts,
