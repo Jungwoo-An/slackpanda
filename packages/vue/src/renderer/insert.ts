@@ -1,6 +1,8 @@
 import { Node, IElement, NodeTypes } from '@spd/shared';
 
 function insert(child: Node, parent: IElement, anchor?: Node) {
+  child.parentNode = parent;
+
   if (
     (child.type === NodeTypes.TEXT && !child.text?.trim()) ||
     child.type === NodeTypes.COMMENT
@@ -15,8 +17,6 @@ function insert(child: Node, parent: IElement, anchor?: Node) {
     0,
     child
   );
-
-  child.parentNode = parent;
 }
 
 export default insert;
