@@ -63,7 +63,7 @@ export class UpdateScheduler {
 
         const backoff = interval * 2;
         if (backoff < this._maxBackoff) {
-          this.performUntilEmptyQueue(interval * 2);
+          this.performUntilEmptyQueue(backoff);
         }
 
         return;
