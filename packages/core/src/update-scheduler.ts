@@ -13,7 +13,7 @@ export class UpdateScheduler {
   private _commitCallback?: CommitCallback;
 
   constructor({
-    interval = 1,
+    interval = 10,
     onCommit,
   }: {
     interval?: number;
