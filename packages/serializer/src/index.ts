@@ -34,6 +34,27 @@ const serializers: Record<TagTypes, (node: IElement) => any> = {
   [TagTypes.BLOCKS]: blocks,
 };
 
+export function normalizeChildren(node: IElement) {
+  return {
+    ...node,
+    children: node.children.filter((child) => {
+      switch (child.type) {
+        case NodeTypes.TEXT: {
+          return !!child.text;
+        }
+
+        case NodeTypes.COMMENT: {
+          return false;
+        }
+
+        default: {
+          return true;
+        }
+      }
+    }),
+  };
+}
+
 export function serialize(node: Node) {
   if (node.type === NodeTypes.COMMENT) {
     // not supported
@@ -44,5 +65,5 @@ export function serialize(node: Node) {
     return node.text ?? null;
   }
 
-  return serializers[node.tag](node);
+  return serializers[node.tag](normalizeChildren(node));
 }
