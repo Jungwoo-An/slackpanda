@@ -6,6 +6,8 @@ export class UpdateScheduler {
   // eslint-disable-next-line no-undef
   private _timeoutId: NodeJS.Timeout | undefined;
 
+  private _maxBackoff: number;
+
   private _interval: number;
 
   private _queue: FixMe[] = [];
@@ -14,11 +16,14 @@ export class UpdateScheduler {
 
   constructor({
     interval = 10,
+    maxBackoff = 2000,
     onCommit,
   }: {
     interval?: number;
+    maxBackoff?: number;
     onCommit?: CommitCallback;
   } = {}) {
+    this._maxBackoff = maxBackoff;
     this._interval = interval;
 
     this._commitCallback = onCommit;
@@ -42,7 +47,7 @@ export class UpdateScheduler {
     this.performUntilEmptyQueue();
   }
 
-  performUntilEmptyQueue() {
+  performUntilEmptyQueue(interval = this._interval) {
     if (this._timeoutId) {
       // concurrent
       return;
@@ -50,6 +55,19 @@ export class UpdateScheduler {
 
     this._timeoutId = global.setTimeout(() => {
       const app = this._queue.shift();
+      if (!app.initialized) {
+        // backoff
+        this._queue.push(app);
+
+        this._timeoutId = undefined;
+
+        const backoff = interval * 2;
+        if (backoff < this._maxBackoff) {
+          this.performUntilEmptyQueue(interval * 2);
+        }
+
+        return;
+      }
 
       this._commitCallback?.(app);
 
@@ -60,6 +78,6 @@ export class UpdateScheduler {
       }
 
       this.performUntilEmptyQueue();
-    }, this._interval);
+    }, interval);
   }
 }
