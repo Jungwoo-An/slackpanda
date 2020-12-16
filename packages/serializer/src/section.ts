@@ -16,10 +16,12 @@ function section(node: IElement) {
 
   return {
     type: 'section',
-    text: {
-      type: 'plain_text',
-      text: node.props.text,
-    },
+    ...(node.props.text && {
+      text: {
+        type: 'plain_text',
+        text: node.props.text,
+      },
+    }),
     ...(accessory && {
       accessory: serialize(accessory),
     }),
