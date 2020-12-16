@@ -1,16 +1,11 @@
-import { Node, IElement, NodeTypes, findRoot } from '@spd/shared';
+import { Node, IElement, findRoot, NodeTypes, TagTypes } from '@spd/shared';
+
 import { scheduler } from '../scheduler';
 
-function insert(child: Node, parent: IElement, anchor?: Node) {
-  child.parentNode = parent;
+import remove from './remove';
 
-  if (
-    (child.type === NodeTypes.TEXT && !child.text?.trim()) ||
-    child.type === NodeTypes.COMMENT
-  ) {
-    // purge empty text and comment
-    return;
-  }
+function insert(child: Node, parent: IElement, anchor?: Node) {
+  remove(child);
 
   const anchorIndex = anchor ? parent.children.indexOf(anchor) : -1;
   parent.children.splice(
@@ -19,7 +14,12 @@ function insert(child: Node, parent: IElement, anchor?: Node) {
     child
   );
 
-  scheduler.schedule(findRoot(child));
+  child.parentNode = parent;
+
+  const root = findRoot(child);
+  if (root.type === NodeTypes.ELEMENT && root.tag === TagTypes.BLOCKS) {
+    scheduler.schedule(findRoot(child));
+  }
 }
 
 export default insert;
