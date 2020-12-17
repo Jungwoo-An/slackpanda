@@ -18,6 +18,7 @@ export const enum TagTypes {
   SECTION = 'section',
   SECTION_ACCESSORY = 'section-accessory',
   SECTION_FIELDS = 'section-fields',
+  TEXT_INPUT = 'plain-text-input',
 
   // Block Elements
   BUTTON = 'button',
