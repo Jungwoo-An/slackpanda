@@ -13,3 +13,4 @@ export { default as PbSelectMenu } from './PbSelectMenu.vue';
 export { default as PbText } from './PbText.vue';
 export { default as PbModal } from './PbModal.vue';
 export { default as PbTextInput } from './PbTextInput.vue';
+export { default as PbCheckboxGroup } from './PbCheckboxGroup.vue';
