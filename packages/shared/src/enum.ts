@@ -19,11 +19,14 @@ export const enum TagTypes {
   SECTION_ACCESSORY = 'section-accessory',
   SECTION_FIELDS = 'section-fields',
   TEXT_INPUT = 'plain-text-input',
+  CHECKBOX_GROUP = 'checkbox-group',
+  RADIO_GROUP = 'radio-group',
 
   // Block Elements
   BUTTON = 'button',
   DATE_PICKER = 'datepicker',
   SELECT_MENU = 'select-menu',
+  FORM_ITEM = 'form-item',
 
   // Composition Objects
   TEXT = 'text',
