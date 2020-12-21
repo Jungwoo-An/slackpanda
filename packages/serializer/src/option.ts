@@ -13,7 +13,7 @@ function option(node: IElement) {
       type: 'plain_text',
       text: serialize(text),
     },
-    value: node.props.value,
+    value: node.props.value.toString(),
     ...(node.props.description && {
       description: node.props.description,
     }),
