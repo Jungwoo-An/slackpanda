@@ -14,6 +14,7 @@ import selectMenu from './select-menu';
 import text from './text';
 import option from './option';
 import plainTextInput from './plain-text-input';
+import radioGroup from './radio-group';
 import checkboxGroup from './checkbox-group';
 import blocks from './blocks';
 import modal from './modal';
@@ -33,6 +34,7 @@ const serializers: Record<TagTypes, (node: IElement) => any> = {
   [TagTypes.TEXT]: text,
   [TagTypes.OPTION]: option,
   [TagTypes.TEXT_INPUT]: plainTextInput,
+  [TagTypes.RADIO_GROUP]: radioGroup,
   [TagTypes.CHECKBOX_GROUP]: checkboxGroup,
   [TagTypes.MODAL]: modal,
   [TagTypes.BLOCKS]: blocks,
