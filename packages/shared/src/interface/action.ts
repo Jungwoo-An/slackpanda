@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-import { TagTypes } from '../enum';
 
 export interface IAction {
   block_id: string;
@@ -8,12 +7,19 @@ export interface IAction {
 }
 
 export interface IDatePickerAction extends IAction {
-  type: TagTypes.DATE_PICKER;
+  type: 'datepicker';
   selected_date: string;
 }
 
 export interface IButtonAction extends IAction {
-  type: TagTypes.BUTTON;
+  type: 'button';
 }
 
-export type ActionType = IDatePickerAction | IButtonAction;
+export interface IPlainTextInputAction extends IAction {
+  value: string;
+}
+
+export type ActionType =
+  | IDatePickerAction
+  | IButtonAction
+  | IPlainTextInputAction;
