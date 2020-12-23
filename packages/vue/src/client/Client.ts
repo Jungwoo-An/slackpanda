@@ -121,7 +121,7 @@ export class Client extends BaseClient {
         text: textOrComponent,
         channel,
       });
-      return;
+      return undefined;
     }
 
     const app = this.render(textOrComponent);
@@ -132,10 +132,7 @@ export class Client extends BaseClient {
     });
 
     try {
-      const {
-        ts,
-        channel: normalizedChannel,
-      } = (await this._instance.chat.postMessage({
+      const response = (await this._instance.chat.postMessage({
         text: '',
         blocks,
         channel,
@@ -143,11 +140,15 @@ export class Client extends BaseClient {
 
       (app as FixMe).initialized = true;
       this._threads.set(app, {
-        channel: normalizedChannel,
-        ts,
+        channel: response.channel,
+        ts: response.ts,
       });
+
+      return response;
     } catch (e) {
       this.emit('error', e);
     }
+
+    return undefined;
   }
 }
