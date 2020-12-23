@@ -1,5 +1,5 @@
 <template>
-  <form-item :label="label">
+  <form-item :name="name" :label="label" :required="required" :hint="hint">
     <slot />
   </form-item>
 </template>
@@ -10,9 +10,20 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'PbFormItem',
   props: {
+    name: {
+      type: String,
+      required: true,
+    },
     label: {
       type: String,
       required: true,
+    },
+    required: {
+      type: Boolean,
+      default: false,
+    },
+    hint: {
+      type: String,
     },
   },
 });
