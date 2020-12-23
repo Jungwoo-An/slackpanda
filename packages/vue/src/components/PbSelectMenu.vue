@@ -26,7 +26,7 @@ export default defineComponent({
       type: String,
       required: false,
     },
-    initialValue: {
+    value: {
       type: String,
     },
   },

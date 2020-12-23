@@ -7,18 +7,18 @@ function checkboxGroup(node: IElement) {
     (child) => child.type === NodeTypes.ELEMENT && child.tag === TagTypes.OPTION
   );
 
-  const initialOption = options.filter(
+  const initialOptions = options.filter(
     (option) =>
       option.type === NodeTypes.ELEMENT &&
-      node.props.initialValue.includes(option.props.value)
+      node.props.initialValues?.includes(option.props.value)
   );
 
   return {
     type: 'checkboxes',
     options: node.children.map(serialize),
     action_id: node.props.actionId,
-    ...(initialOption?.length > 0 && {
-      initial_options: initialOption.map(serialize),
+    ...(initialOptions?.length > 0 && {
+      initial_options: initialOptions.map(serialize),
     }),
   };
 }

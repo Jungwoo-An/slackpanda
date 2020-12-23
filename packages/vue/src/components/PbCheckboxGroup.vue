@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { generateNonce } from '@spd/shared';
+import { FixMe, generateNonce, ICheckboxGroupAction } from '@spd/shared';
 
 export default defineComponent({
   name: 'PbCheckboxGroup',
@@ -21,7 +21,7 @@ export default defineComponent({
         return generateNonce();
       },
     },
-    initialValue: {
+    values: {
       type: Array,
     },
   },
