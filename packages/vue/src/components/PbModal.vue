@@ -60,7 +60,22 @@ export default defineComponent({
         }
 
         case 'view_submission': {
-          return onSubmit?.value?.();
+          const values = Object.keys(payload.view.state.values).reduce(
+            (result, key) => {
+              const [itemKey] =
+                Object.keys(payload.view.state.values[key]) ?? [];
+              if (!itemKey) {
+                return result;
+              }
+
+              result[key] = payload.view.state.values[key][itemKey].value;
+
+              return result;
+            },
+            {} as Record<string, any>
+          );
+
+          return onSubmit?.value?.(values, payload);
         }
 
         default:
