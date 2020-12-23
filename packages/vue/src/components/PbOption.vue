@@ -11,7 +11,7 @@ export default defineComponent({
   name: 'PbOption',
   props: {
     value: {
-      type: null,
+      type: String,
       required: true,
     },
     description: {
