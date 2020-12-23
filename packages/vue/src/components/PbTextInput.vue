@@ -6,7 +6,6 @@
     :placeholder="placeholder"
     :multiline="multiline"
     :action-id="actionId"
-    @action="handleAction"
   />
 </template>
 
@@ -38,15 +37,6 @@ export default defineComponent({
         return generateNonce();
       },
     },
-  },
-  setup() {
-    function handleAction(payload: any) {
-      console.log(payload);
-    }
-
-    return {
-      handleAction,
-    };
   },
 });
 </script>

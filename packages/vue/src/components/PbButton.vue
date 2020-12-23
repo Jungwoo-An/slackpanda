@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { ActionType, generateNonce } from '@spd/shared';
+import { FixMe, generateNonce, IButtonAction } from '@spd/shared';
 
 export default defineComponent({
   name: 'PbButton',
@@ -30,7 +30,7 @@ export default defineComponent({
     },
   },
   setup(_, { emit }) {
-    function handleAction(payload: ActionType) {
+    function handleAction(payload: FixMe) {
       emit('click', payload);
     }
 
