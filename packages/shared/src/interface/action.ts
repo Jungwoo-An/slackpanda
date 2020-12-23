@@ -19,7 +19,28 @@ export interface IPlainTextInputAction extends IAction {
   value: string;
 }
 
+export interface ICheckboxGroupAction extends IAction {
+  selected_options: Array<{
+    value: string;
+  }>;
+}
+
+export interface ISelectMenuAction extends IAction {
+  selected_option: {
+    value: string;
+  };
+}
+
+export interface IRadioGroupAction extends IAction {
+  selected_options: Array<{
+    value: string;
+  }>;
+}
+
 export type ActionType =
   | IDatePickerAction
   | IButtonAction
-  | IPlainTextInputAction;
+  | IPlainTextInputAction
+  | ICheckboxGroupAction
+  | IRadioGroupAction
+  | ISelectMenuAction;
