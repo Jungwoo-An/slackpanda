@@ -62,7 +62,7 @@ export class Client extends BaseClient {
     }
 
     const handler = ACTION_HANDLER_STORAGE.get(action.action_id);
-    handler?.(payload);
+    handler?.(payload, action);
   }
 
   private handleUpdate = (app: FixMe) => {
