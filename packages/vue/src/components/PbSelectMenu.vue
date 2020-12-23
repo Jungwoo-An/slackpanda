@@ -1,5 +1,9 @@
 <template>
-  <select-menu :action-id="actionId" :placeholder="placeholder" :value="value">
+  <select-menu
+    :action-id="actionId"
+    :placeholder="placeholder"
+    :initial-value="initialValue"
+  >
     <slot />
   </select-menu>
 </template>
@@ -19,11 +23,10 @@ export default defineComponent({
     },
     placeholder: {
       type: String,
-      required: true,
+      required: false,
     },
-    value: {
+    initialValue: {
       type: null,
-      required: true,
     },
   },
 });

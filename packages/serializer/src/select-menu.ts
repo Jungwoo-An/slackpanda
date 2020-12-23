@@ -10,16 +10,18 @@ function selectMenu(node: IElement) {
   const initialOption = options.find(
     (option) =>
       option.type === NodeTypes.ELEMENT &&
-      option.props.value === node.props.value
+      option.props.value === node.props.initialValue
   );
 
   return {
     type: `${node.props.type ?? 'static'}_select`,
-    placeholder: {
-      type: 'plain_text',
-      text: node.props.placeholder,
-    },
     action_id: node.props.actionId,
+    ...(node.props.placeholder && {
+      placeholder: {
+        type: 'plain_text',
+        text: node.props.placeholder,
+      },
+    }),
     ...(options.length > 0 && {
       options: options.map(serialize),
     }),
