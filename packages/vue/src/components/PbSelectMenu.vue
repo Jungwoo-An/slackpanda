@@ -2,7 +2,8 @@
   <select-menu
     :action-id="actionId"
     :placeholder="placeholder"
-    :initial-value="initialValue"
+    :initial-value="value"
+    @action="handleAction"
   >
     <slot />
   </select-menu>
@@ -10,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { generateNonce } from '@spd/shared';
+import { FixMe, generateNonce, ISelectMenuAction } from '@spd/shared';
 
 export default defineComponent({
   name: 'PbSelectMenu',
@@ -28,6 +29,15 @@ export default defineComponent({
     initialValue: {
       type: String,
     },
+  },
+  setup(_, { emit }) {
+    function handleAction(_payload: FixMe, action: ISelectMenuAction) {
+      emit('change', action.selected_option.value);
+    }
+
+    return {
+      handleAction,
+    };
   },
 });
 </script>

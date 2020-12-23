@@ -1,6 +1,6 @@
 <template>
   <plain-text-input
-    :initial-value="initialValue"
+    :initial-value="value"
     :min-length="minlength"
     :max-length="maxlength"
     :placeholder="placeholder"
@@ -16,7 +16,7 @@ import { generateNonce } from '@spd/shared';
 export default defineComponent({
   name: 'PbTextInput',
   props: {
-    initialValue: {
+    value: {
       type: String,
     },
     minlength: {

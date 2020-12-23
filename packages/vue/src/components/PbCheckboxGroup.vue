@@ -1,5 +1,9 @@
 <template>
-  <checkbox-group :action-id="actionId" :initial-value="initialValue">
+  <checkbox-group
+    :action-id="actionId"
+    :initial-values="values"
+    @action="handleAction"
+  >
     <slot />
   </checkbox-group>
 </template>
@@ -20,6 +24,18 @@ export default defineComponent({
     initialValue: {
       type: Array,
     },
+  },
+  setup(_, { emit }) {
+    function handleAction(_payload: FixMe, action: ICheckboxGroupAction) {
+      emit(
+        'change',
+        action.selected_options.map((selectedOption) => selectedOption.value)
+      );
+    }
+
+    return {
+      handleAction,
+    };
   },
 });
 </script>
