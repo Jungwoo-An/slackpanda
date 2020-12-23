@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { FixMe, generateNonce, IButtonAction } from '@spd/shared';
+import { FixMe, generateNonce } from '@spd/shared';
 
 export default defineComponent({
   name: 'PbButton',
