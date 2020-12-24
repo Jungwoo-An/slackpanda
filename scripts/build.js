@@ -22,6 +22,13 @@ async function build(packageDir) {
     input: path.resolve(`./${packageDir}`, 'src/index.ts'),
     plugins: [...DEFUALT_ROLLUP_PLUGINS],
     external: ['vue'],
+    onwarn(warning, handler) {
+      if (warning.code === 'CIRCULAR_DEPENDENCY') {
+        return;
+      }
+
+      handler(warning);
+    },
   });
 
   compiler.write({
