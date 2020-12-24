@@ -916,7 +916,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^4.0.0":
+"chalk@npm:^4.0.0, chalk@npm:^4.1.0":
   version: 4.1.0
   resolution: "chalk@npm:4.1.0"
   dependencies:
@@ -3175,6 +3175,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"readline@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "readline@npm:1.3.0"
+  checksum: 1638f45209e339c90891d609f999748d2113b8c2e259c19c7e0ea14d0c7439fee0d74c52b09ff17372e52387f8cca9f94650c03396696ac3874d72efc8804219
+  languageName: node
+  linkType: hard
+
 "regexpp@npm:^3.0.0, regexpp@npm:^3.1.0":
   version: 3.1.0
   resolution: "regexpp@npm:3.1.0"
@@ -3277,6 +3284,13 @@ resolve@1.17.0:
   bin:
     rimraf: bin.js
   checksum: f0de3e445581e64a8a077af476cc30708e659f5779ec2ca2a161556d0792aa318a685923798ae22055b4ecd02b9aff444ef619578f7af53cf8e0e248031e3dee
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-analyzer@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "rollup-plugin-analyzer@npm:4.0.0"
+  checksum: 3d72bd5027cfea692d4bc625aac0599f90d7ea81c7fe40c25178d3c42292becb219418697852eb5e2c36e7068fcdf0236f1e423fb57bb2a24d0eccb6c032ac22
   languageName: node
   linkType: hard
 
@@ -3468,13 +3482,16 @@ resolve@1.17.0:
     "@typescript-eslint/eslint-plugin": ^4.3.0
     "@typescript-eslint/parser": ^4.3.0
     "@vue/compiler-sfc": ^3.0.4
+    chalk: ^4.1.0
     eslint: ^7.10.0
     eslint-config-airbnb-base: ^14.2.0
     eslint-config-prettier: ^6.12.0
     eslint-plugin-import: ^2.22.1
     glob: ^7.1.6
     glob-promise: ^3.4.0
+    readline: ^1.3.0
     rollup: ^2.32.1
+    rollup-plugin-analyzer: ^4.0.0
     rollup-plugin-terser: ^7.0.2
     rollup-plugin-typescript2: ^0.28.0
     rollup-plugin-vue: ^6.0.0
