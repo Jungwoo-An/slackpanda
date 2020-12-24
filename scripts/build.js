@@ -1,6 +1,7 @@
 const path = require('path');
 
 const { rollup } = require('rollup');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const vue = require('rollup-plugin-vue');
 const typescript = require('rollup-plugin-typescript2');
 
@@ -8,7 +9,7 @@ const packageJSON = require('../package.json');
 
 const { getWorkspacePackages } = require('./utils');
 
-const DEFUALT_ROLLUP_PLUGINS = [vue(), typescript()];
+const DEFUALT_ROLLUP_PLUGINS = [vue(), typescript(), nodeResolve()];
 
 async function build(packageDir) {
   const filename = path.basename(packageDir);
