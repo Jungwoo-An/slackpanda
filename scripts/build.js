@@ -21,7 +21,13 @@ async function build(packageDir) {
   const compiler = await rollup({
     input: path.resolve(`./${packageDir}`, 'src/index.ts'),
     plugins: [...DEFUALT_ROLLUP_PLUGINS],
-    external: ['vue'],
+    external: [
+      'events',
+      'vue',
+      '@slack/web-api',
+      '@slack/interactive-messages',
+      '@vue/runtime-core',
+    ],
     onwarn(warning, handler) {
       if (warning.code === 'CIRCULAR_DEPENDENCY') {
         return;
