@@ -6,7 +6,7 @@
   "author": "Jungwoo-An <o1o9814@naver.com>",
   "license": "MIT",
   "scripts": {
-    "build": "node ./scripts/build"
+    "build": "node ./scripts/commands/build",
   },
   "workspaces": [
     "packages/*"

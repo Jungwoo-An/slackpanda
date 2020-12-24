@@ -1,27 +1,26 @@
 const path = require('path');
 
-const { rollup } = require('rollup');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const { terser } = require('rollup-plugin-terser');
 const vue = require('rollup-plugin-vue');
 const typescript = require('rollup-plugin-typescript2');
 
-const packageJSON = require('../package.json');
-
-const { getWorkspacePackages } = require('./utils');
-
 const DEFUALT_ROLLUP_PLUGINS = [vue(), typescript(), nodeResolve(), terser()];
 
-async function build(packageDir) {
-  const filename = path.basename(packageDir);
-
-  const { build: canBuild } = require(`../${packageDir}/package.json`);
-  if (canBuild === false) {
-    return;
-  }
-
-  const compiler = await rollup({
+function createRollupConfig(packageDir) {
+  return {
     input: path.resolve(`./${packageDir}`, 'src/index.ts'),
+    output: [
+      {
+        format: 'cjs',
+        sourcemap: true,
+        file: path.resolve(
+          `./${packageDir}`,
+          'dist',
+          `${path.basename(packageDir)}.js`
+        ),
+      },
+    ],
     plugins: [...DEFUALT_ROLLUP_PLUGINS],
     external: [
       'events',
@@ -37,17 +36,9 @@ async function build(packageDir) {
 
       handler(warning);
     },
-  });
-
-  compiler.write({
-    file: path.resolve(`./${packageDir}`, 'dist', `${filename}.js`),
-    format: 'cjs',
-    sourcemap: true,
-  });
+  };
 }
 
-(async () => {
-  const packages = await getWorkspacePackages(packageJSON.workspaces || []);
-
-  packages.forEach(build);
-})();
+module.exports = {
+  createRollupConfig,
+};
