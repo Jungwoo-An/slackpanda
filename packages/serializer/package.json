@@ -4,6 +4,6 @@
   "license": "MIT",
   "main": "./src/index.ts",
   "dependencies": {
-    "@spd/shared": "^0.1.0"
+    "@spd/shared": "workspace:packages/shared"
   }
 }
