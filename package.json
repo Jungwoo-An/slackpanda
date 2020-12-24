@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "node ./scripts/commands/build",
+    "dev": "node ./scripts/commands/dev"
   },
   "workspaces": [
     "packages/*"
