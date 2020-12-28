@@ -206,6 +206,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@spd/slack@workspace:packages/slack":
+  version: 0.0.0-use.local
+  resolution: "@spd/slack@workspace:packages/slack"
+  languageName: unknown
+  linkType: soft
+
 "@spd/vue@workspace:packages/vue":
   version: 0.0.0-use.local
   resolution: "@spd/vue@workspace:packages/vue"
