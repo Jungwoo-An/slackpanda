@@ -1,0 +1,12 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "Slackpanda example project",
+  "scripts": {
+    "dev": "node -r vue3-node src/index.js"
+  },
+  "dependencies": {
+    "vue": "^3.0.4",
+    "vue3-node": "^0.1.3"
+  }
+}
