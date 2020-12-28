@@ -1,4 +1,4 @@
-export class Observer<T extends (...args: any[]) => any> {
+export class BaseObserver<T extends (...args: any[]) => any> {
   protected _listeners: T[] = [];
 
   public subscribe(listener: T) {
@@ -16,5 +16,9 @@ export class Observer<T extends (...args: any[]) => any> {
     }
 
     this._listeners.splice(index, 1);
+  }
+
+  notify(...args: Parameters<T>) {
+    this._listeners.forEach((listener) => listener(...args));
   }
 }
