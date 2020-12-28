@@ -2,16 +2,20 @@ import { FixMe } from '../types';
 import { IElement } from './node';
 
 export interface IClientAdapterPayload {
+  channelId: string;
+  text?: string;
   node?: IElement;
-  [key: string]: any;
 }
 
-export interface IClientAdapter<T extends IClientAdapterPayload> {
-  sendMessage: (payload: T) => Promise<FixMe>;
+export interface IClientAdapter {
+  sendMessage: (payload: IClientAdapterPayload) => Promise<FixMe>;
 
-  updateMessage: (payload: T) => Promise<FixMe>;
+  updateMessage: (node: IElement) => Promise<FixMe>;
 
-  addEventHandler: (event: string, handler: (...args: any[]) => any) => void;
+  addEventListener: (event: string, listener: (...args: any[]) => any) => void;
 
-  removeEventHandler: (event: string, handler: (...args: any[]) => any) => void;
+  removeEventListener: (
+    event: string,
+    listener: (...args: any[]) => any
+  ) => void;
 }

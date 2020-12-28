@@ -6,47 +6,50 @@ import {
   FixMe,
   IClientAdapter,
   IClientAdapterPayload,
+  IElement,
   omitModal,
 } from '@spd/shared';
 
 import { serialize } from './serializer';
 
 type HandlerType = (...args: any[]) => any;
-
-export interface ISlackAdapterPayloadType extends IClientAdapterPayload {
-  text?: string;
-  ts?: string;
-  channel: string;
-}
-
-export class SlackAdapter implements IClientAdapter<ISlackAdapterPayloadType> {
+export class SlackAdapter implements IClientAdapter {
   private _listeners = new Map<string, HandlerType[]>();
 
-  protected _instance: WebClient;
+  private _instance: WebClient;
 
   private _adapter?: ReturnType<typeof createMessageAdapter>;
+
+  private _conversations: WeakMap<
+    IElement,
+    {
+      channel: string;
+      ts: string;
+    }
+  > = new WeakMap();
 
   constructor({
     apiToken,
     signingSecret,
+    port = 8080,
   }: {
     apiToken: string;
+    port?: number;
     signingSecret?: string;
   }) {
     this._instance = new WebClient(apiToken);
 
     if (signingSecret) {
       this._adapter = this.initAdapter(signingSecret);
+      this._adapter.start(port);
     }
   }
 
-  private handleSubmission = (payload: FixMe) => {
+  private handleSubmission = async (payload: FixMe) => {
     const actionId = payload.view.callback_id;
-    const handlers = this._listeners.get(actionId);
+    const handlers = this._listeners.get(actionId) ?? [];
 
-    return (
-      handlers?.map(async (handler) => handler(payload)) ?? Promise.resolve()
-    );
+    await Promise.all(handlers.map((handler) => handler(payload)));
   };
 
   private handleViewClosed = (payload: FixMe) => {
@@ -77,7 +80,7 @@ export class SlackAdapter implements IClientAdapter<ISlackAdapterPayloadType> {
     return adapter;
   }
 
-  public async sendMessage({ channel, node, text }: ISlackAdapterPayloadType) {
+  public async sendMessage({ text, node, channelId }: IClientAdapterPayload) {
     if (!node && !text) {
       // TODO :: Create error class
       throw new Error('Required paramter text or node was null or undefined');
@@ -85,8 +88,8 @@ export class SlackAdapter implements IClientAdapter<ISlackAdapterPayloadType> {
 
     if (text) {
       return this._instance.chat.postMessage({
+        channel: channelId,
         text,
-        channel,
       });
     }
 
@@ -95,33 +98,29 @@ export class SlackAdapter implements IClientAdapter<ISlackAdapterPayloadType> {
       children: omitModal(node!.children),
     });
 
-    return this._instance.chat.postMessage({
+    const response = (await this._instance.chat.postMessage({
       text: '',
+      channel: channelId,
       blocks,
-      channel,
+    })) as FixMe;
+
+    this._conversations.set(node!, {
+      channel: response.channel,
+      ts: response.ts,
     });
+
+    return response;
   }
 
-  public async updateMessage({
-    channel,
-    node,
-    text,
-    ts,
-  }: ISlackAdapterPayloadType) {
-    if (!node && !text) {
+  public async updateMessage(node: IElement) {
+    if (!node) {
       // TODO :: Create error class
-      throw new Error('Required paramter text or node was null or undefined');
+      throw new Error('Required paramter node was null or undefined');
     }
 
-    if (!ts) {
-      throw new Error('Required paramter ts was null or undefined');
-    }
-
-    if (text) {
-      return this._instance.chat.postMessage({
-        text,
-        channel,
-      });
+    const conversation = this._conversations.get(node!);
+    if (!conversation) {
+      throw new Error('sendMessage must be called before updateMessage');
     }
 
     const blocks = serialize({
@@ -142,26 +141,26 @@ export class SlackAdapter implements IClientAdapter<ISlackAdapterPayloadType> {
 
     return this._instance.chat.update({
       text: '',
-      channel,
-      ts,
+      channel: conversation.channel,
+      ts: conversation.ts,
       blocks,
     });
   }
 
-  public addEventHandler(actionId: string, handler: HandlerType) {
+  public addEventListener(actionId: string, listener: HandlerType) {
     if (!this._listeners.has(actionId)) {
       this._listeners.set(actionId, []);
     }
 
-    this._listeners.get(actionId)!.push(handler);
+    this._listeners.get(actionId)!.push(listener);
   }
 
-  public removeEventHandler(actionId: string, handler: HandlerType) {
+  public removeEventListener(actionId: string, listener: HandlerType) {
     if (!this._listeners.has(actionId)) {
       return;
     }
 
-    const index = this._listeners.get(actionId)!.indexOf(handler);
+    const index = this._listeners.get(actionId)!.indexOf(listener);
     if (index === -1) {
       return;
     }
