@@ -2,6 +2,6 @@ import { IElement } from '@spd/shared';
 
 import { BaseObserver } from './base';
 
-type Listener = (app: IElement) => void;
+type ListenerType = (app: IElement) => void;
 
-export class UpdateObserver extends BaseObserver<Listener> {}
+export class UpdateObserver extends BaseObserver<ListenerType> {}

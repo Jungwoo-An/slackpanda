@@ -1,5 +1,11 @@
 import { BaseObserver } from './base';
 
-type Listener = (...args: any[]) => void;
+type HandlerType = (...args: any[]) => any;
 
-export class EventObserver extends BaseObserver<Listener> {}
+type ListenerType = (
+  event: string,
+  nextHandler: HandlerType,
+  prevHandler?: HandlerType
+) => void;
+
+export class EventObserver extends BaseObserver<ListenerType> {}
