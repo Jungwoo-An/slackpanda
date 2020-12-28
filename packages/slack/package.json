@@ -1,3 +1,8 @@
 {
-  "name": "@spd/slack"
+  "name": "@spd/slack",
+  "dependencies": {
+    "@slack/interactive-messages": "^1.7.0",
+    "@slack/web-api": "^5.14.0",
+    "@spd/shared": "workspace:packages/shared"
+  }
 }

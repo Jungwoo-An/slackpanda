@@ -164,7 +164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slack/web-api@npm:^5.12.0":
+"@slack/web-api@npm:^5.12.0, @slack/web-api@npm:^5.14.0":
   version: 5.14.0
   resolution: "@slack/web-api@npm:5.14.0"
   dependencies:
@@ -209,6 +209,10 @@ __metadata:
 "@spd/slack@workspace:packages/slack":
   version: 0.0.0-use.local
   resolution: "@spd/slack@workspace:packages/slack"
+  dependencies:
+    "@slack/interactive-messages": ^1.7.0
+    "@slack/web-api": ^5.14.0
+    "@spd/shared": "workspace:packages/shared"
   languageName: unknown
   linkType: soft
 
