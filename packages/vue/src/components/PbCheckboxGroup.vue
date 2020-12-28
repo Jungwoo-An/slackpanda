@@ -16,8 +16,8 @@ export default defineComponent({
   name: 'PbCheckboxGroup',
   props: {
     actionId: {
-      type: Object,
-      default() {
+      type: String,
+      default: () => {
         return generateNonce();
       },
     },

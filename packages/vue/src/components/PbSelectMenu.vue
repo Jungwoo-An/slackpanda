@@ -17,8 +17,8 @@ export default defineComponent({
   name: 'PbSelectMenu',
   props: {
     actionId: {
-      type: Object,
-      default() {
+      type: String,
+      default: () => {
         return generateNonce();
       },
     },

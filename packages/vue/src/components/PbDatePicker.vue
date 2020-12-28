@@ -15,8 +15,8 @@ export default defineComponent({
   name: 'PbDatePicker',
   props: {
     actionId: {
-      type: Object,
-      default() {
+      type: String,
+      default: () => {
         return generateNonce();
       },
     },

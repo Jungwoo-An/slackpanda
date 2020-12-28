@@ -33,7 +33,7 @@ export default defineComponent({
     },
     actionId: {
       type: String,
-      default() {
+      default: () => {
         return generateNonce();
       },
     },
