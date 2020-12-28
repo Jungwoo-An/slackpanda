@@ -1,5 +1,6 @@
 {
   "name": "@spd/slack",
+  "main": "./src/index.ts",
   "dependencies": {
     "@slack/interactive-messages": "^1.7.0",
     "@slack/web-api": "^5.14.0",
