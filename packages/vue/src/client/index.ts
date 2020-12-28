@@ -1,21 +1,25 @@
-import { updateObserver } from '../observers';
+import { IClientAdapter } from '@spd/shared';
+
+import { updateObserver, eventObserver } from '../observers';
 import { scheduler } from '../scheduler';
 
 import { Client } from './client';
 
-// TODO :: Parameters typing
-export function createClient({
-  apiToken,
-  signingSecret,
-}: {
-  apiToken: string;
-  signingSecret?: string;
-}) {
+export function createClient({ adapter }: { adapter: IClientAdapter }) {
+  const client = new Client({
+    adapter,
+    updateObserver,
+  });
+
   scheduler.oncommit = (app) => updateObserver.notify(app);
 
-  return new Client({
-    observer: updateObserver,
-    apiToken,
-    signingSecret,
+  eventObserver.subscribe((event, nextHandler, prevHandler) => {
+    if (prevHandler) {
+      client.removeEventListener(event, prevHandler);
+    }
+
+    client.addEventListener(event, nextHandler);
   });
+
+  return client;
 }
