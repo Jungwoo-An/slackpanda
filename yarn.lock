@@ -192,14 +192,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@spd/serializer@workspace:packages/serializer":
-  version: 0.0.0-use.local
-  resolution: "@spd/serializer@workspace:packages/serializer"
-  dependencies:
-    "@spd/shared": "workspace:packages/shared"
-  languageName: unknown
-  linkType: soft
-
 "@spd/shared@workspace:packages/shared":
   version: 0.0.0-use.local
   resolution: "@spd/shared@workspace:packages/shared"

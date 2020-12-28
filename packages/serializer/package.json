@@ -1,9 +1,0 @@
-{
-  "name": "@spd/serializer",
-  "version": "0.1.0",
-  "license": "MIT",
-  "main": "./src/index.ts",
-  "dependencies": {
-    "@spd/shared": "workspace:packages/shared"
-  }
-}
