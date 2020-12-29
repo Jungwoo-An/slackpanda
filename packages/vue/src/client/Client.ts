@@ -8,33 +8,17 @@ import {
   IElement,
   IClientAdapter,
 } from '@spd/shared';
-import { UpdateObserver } from '@spd/core';
 
 import { createApp } from '../renderer';
 
 export class Client extends EventEmitter {
   private _adapter: IClientAdapter;
 
-  private _updateObserver: UpdateObserver;
-
-  constructor({
-    adapter,
-    updateObserver,
-  }: {
-    adapter: IClientAdapter;
-    updateObserver: UpdateObserver;
-  }) {
+  constructor({ adapter }: { adapter: IClientAdapter }) {
     super();
 
     this._adapter = adapter;
-
-    this._updateObserver = updateObserver;
-    this._updateObserver.subscribe(this.handleUpdate);
   }
-
-  private handleUpdate = (app: IElement) => {
-    return this._adapter.updateMessage(app);
-  };
 
   private render(component: Component) {
     const root: IElement = {
@@ -88,5 +72,9 @@ export class Client extends EventEmitter {
     }
 
     return undefined;
+  }
+
+  public updateMessage(app: IElement) {
+    return this._adapter.updateMessage(app);
   }
 }

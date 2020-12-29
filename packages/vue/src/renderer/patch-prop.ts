@@ -2,7 +2,7 @@ import { IElement, ACTION_HANDLER_REGEX, findRoot } from '@spd/shared';
 
 import { camelCase } from 'change-case';
 
-import { eventObserver } from '../observers';
+import { emitter } from '../emitter';
 import { scheduler } from '../scheduler';
 
 function patchProp(el: IElement, key: string, prevValue: any, nextValue: any) {
@@ -15,7 +15,7 @@ function patchProp(el: IElement, key: string, prevValue: any, nextValue: any) {
   if (ACTION_HANDLER_REGEX.test(camelizedKey) && el.props.actionId) {
     const { actionId } = el.props;
 
-    eventObserver.notify(actionId, nextValue, prevValue);
+    emitter.emit('SET_LISTENER', actionId, nextValue, prevValue);
 
     el.props.actionId = actionId;
     el.props.value = actionId;
