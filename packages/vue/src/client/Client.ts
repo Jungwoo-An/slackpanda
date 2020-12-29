@@ -11,12 +11,10 @@ import {
 
 import { createApp } from '../renderer';
 
-export class Client extends EventEmitter {
+export class Client {
   private _adapter: IClientAdapter;
 
   constructor({ adapter }: { adapter: IClientAdapter }) {
-    super();
-
     this._adapter = adapter;
   }
 
@@ -68,10 +66,8 @@ export class Client extends EventEmitter {
 
       return response;
     } catch (e) {
-      this.emit('error', e);
+      throw new Error(`Error sending message: ${e.message}`);
     }
-
-    return undefined;
   }
 
   public updateMessage(app: IElement) {
