@@ -1,5 +1,5 @@
 <div align="center">
-  <img src=".github/assets/slackpanda.png" width="250">
+  <img src="docs/assets/slackpanda.png" width="250">
 </div>
 
 <br />
@@ -12,6 +12,18 @@
 ![LICENSE](https://img.shields.io/npm/l/slackpanda?color=blue)
 
 </div>
+
+## Preview
+
+<div align="center">
+
+|                         Code                         |                         Result                         |
+| :--------------------------------------------------: | :----------------------------------------------------: |
+| <img src="docs/assets/preview-code.png" width="300"> | <img src="docs/assets/preview-result.gif" width="300"> |
+
+</div>
+
+## How this works
 
 ## Getting Started
 
