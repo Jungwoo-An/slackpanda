@@ -19,7 +19,7 @@
 
 |                         Code                         |                         Result                         |
 | :--------------------------------------------------: | :----------------------------------------------------: |
-| <img src="docs/assets/preview-code.png" width="300"> | <img src="docs/assets/preview-result.gif" width="300"> |
+| <img src="docs/assets/preview-code.png" width="400"> | <img src="docs/assets/preview-result.gif" width="400"> |
 
 </div>
 
