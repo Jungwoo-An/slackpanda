@@ -1,5 +1,3 @@
-import { EventEmitter } from 'events';
-
 import { Component } from 'vue';
 import {
   NodeTypes,
