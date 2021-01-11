@@ -17,6 +17,7 @@
     "global-require": "off",
     "no-underscore-dangle": "off",
     "no-param-reassign": "off",
+    "no-dupe-class-members": "off",
 
     "import/no-dynamic-require": "off",
     "import/no-extraneous-dependencies": "off",
