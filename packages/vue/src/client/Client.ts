@@ -1,4 +1,4 @@
-import { Component } from 'vue';
+import { Component, App } from 'vue';
 import {
   NodeTypes,
   FixMe,
@@ -10,10 +10,22 @@ import {
 import { createApp } from '../renderer';
 
 export class Client {
+  private _apps: Map<App<IElement>, IElement> = new Map();
+
   private _adapter: IClientAdapter;
 
-  constructor({ adapter }: { adapter: IClientAdapter }) {
+  private _concurrentLimit: number;
+
+  constructor({
+    adapter,
+    concurrentLimit = 10,
+  }: {
+    adapter: IClientAdapter;
+    concurrentLimit?: number;
+  }) {
     this._adapter = adapter;
+
+    this._concurrentLimit = concurrentLimit;
   }
 
   private render(component: Component) {
@@ -28,6 +40,16 @@ export class Client {
     const app = createApp(component);
 
     app.mount(root);
+
+    this._apps.set(app, root);
+
+    if (this._apps.size > this._concurrentLimit) {
+      const staleApp = this._apps.keys().next();
+
+      staleApp.value.unmount(this._apps.get(staleApp.value));
+
+      this._apps.delete(staleApp.value);
+    }
 
     return root;
   }
