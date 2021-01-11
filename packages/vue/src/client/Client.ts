@@ -40,29 +40,33 @@ export class Client {
     this._adapter.removeEventListener(event, handler);
   }
 
+  public sendMessage(text: string, channel: string): Promise<void>;
+
+  public sendMessage(component: Component, channel: string): Promise<void>;
+
   public async sendMessage(
     textOrComponent: string | Component,
     channel: string
-  ) {
+  ): Promise<void> {
     if (typeof textOrComponent === 'string') {
-      return this._adapter.sendMessage({
+      await this._adapter.sendMessage({
         text: textOrComponent,
         channelId: channel,
       });
+
+      return;
     }
 
     const app = this.render(textOrComponent);
 
     try {
-      const response = await this._adapter.sendMessage({
+      await this._adapter.sendMessage({
         text: '',
         node: app,
         channelId: channel,
       });
 
       (app as FixMe).initialized = true;
-
-      return response;
     } catch (e) {
       throw new Error(`Error sending message: ${e.message}`);
     }
