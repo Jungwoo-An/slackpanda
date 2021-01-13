@@ -34,7 +34,7 @@ export default defineComponent({
   },
   setup(_, { emit }) {
     function handleAction(_payload: FixMe, action: ISelectMenuAction) {
-      emit('change', action.selected_option.value);
+      emit('input', action.selected_option.value);
     }
 
     return {

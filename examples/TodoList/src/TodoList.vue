@@ -1,8 +1,8 @@
 <template>
   <pb-actions v-if="items.length > 0">
     <pb-checkbox-group
-      :initial-values="completedItems.map((item) => item.timestamp)"
-      @change="handleChange"
+      :value="completedItems.map((item) => item.timestamp)"
+      @input="handleChange"
     >
       <pb-checkbox
         v-for="item in items"

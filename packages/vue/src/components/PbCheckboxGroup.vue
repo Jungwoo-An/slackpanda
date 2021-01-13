@@ -29,7 +29,7 @@ export default defineComponent({
   setup(_, { emit }) {
     function handleAction(_payload: FixMe, action: ICheckboxGroupAction) {
       emit(
-        'change',
+        'input',
         action.selected_options.map((selectedOption) => selectedOption.value)
       );
     }

@@ -25,11 +25,12 @@ export default defineComponent({
     },
     value: {
       type: String,
+      required: true,
     },
   },
   setup(_, { emit }) {
     function handleAction(_payload: FixMe, action: IDatePickerAction) {
-      emit('change', action.selected_date);
+      emit('input', action.selected_date);
     }
 
     return {
