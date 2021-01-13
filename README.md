@@ -148,6 +148,7 @@ Works fine!
 
 ## Feature Planning
 
+- [ ] Test
 - [ ] Friendly error report
 - [ ] Home tabs
 - [ ] CLI
