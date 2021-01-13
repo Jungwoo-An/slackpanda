@@ -16,6 +16,9 @@ import { FixMe, generateNonce, ISelectMenuAction } from '@spd/shared';
 export default defineComponent({
   name: 'PbSelectMenu',
   props: {
+    type: {
+      type: String,
+    },
     actionId: {
       type: String,
       default: () => {
@@ -24,7 +27,6 @@ export default defineComponent({
     },
     placeholder: {
       type: String,
-      required: false,
     },
     value: {
       type: String,
