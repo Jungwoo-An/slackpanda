@@ -23,6 +23,7 @@ export default defineComponent({
     },
     value: {
       type: Array,
+      required: true,
     },
   },
   setup(_, { emit }) {

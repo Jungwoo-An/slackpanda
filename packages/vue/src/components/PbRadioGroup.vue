@@ -23,6 +23,7 @@ export default defineComponent({
     },
     value: {
       type: String,
+      required: true,
     },
   },
   setup(_, { emit }) {
