@@ -21,7 +21,7 @@ $ npm install @spd/vue @spd/slack
 $ yarn add @spd/vue @spd/slack
 ```
 
-If you not have build command for .vue file, Recommend vue3-node library.
+If you not have build command for .vue file, Recommend [vue3-node](https://github.com/Jungwoo-An/vue3-node) library.
 
 ```bash
 # via npm
