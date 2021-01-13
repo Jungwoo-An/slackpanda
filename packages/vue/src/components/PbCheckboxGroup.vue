@@ -1,7 +1,7 @@
 <template>
   <checkbox-group
     :action-id="actionId"
-    :initial-values="values"
+    :initial-values="value"
     @action="handleAction"
   >
     <slot />
@@ -21,7 +21,7 @@ export default defineComponent({
         return generateNonce();
       },
     },
-    values: {
+    value: {
       type: Array,
     },
   },
