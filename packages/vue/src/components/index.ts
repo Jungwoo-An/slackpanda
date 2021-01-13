@@ -8,7 +8,7 @@ export { default as PbHeader } from './PbHeader.vue';
 export {
   default as PbOption,
   default as PbCheckbox,
-  default as PbRadio,
+  default as PbRadioButton,
 } from './PbOption.vue';
 export { default as PbSection } from './PbSection.vue';
 export { default as PbSectionFields } from './PbSectionFields.vue';
