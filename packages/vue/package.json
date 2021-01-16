@@ -5,9 +5,11 @@
   "types": "./dist/vue.d.js",
   "license": "MIT",
   "dependencies": {
-    "@spd/core": "workspace:packages/core",
-    "@spd/shared": "workspace:packages/shared",
     "change-case": "^4.1.1",
     "vue": "^3.0.0"
+  },
+  "peerDependencies": {
+    "@spd/core": "workspace:packages/core",
+    "@spd/shared": "workspace:packages/shared"
   }
 }
