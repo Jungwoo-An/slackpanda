@@ -6,8 +6,11 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./"
     "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@spd/*": ["packages/*/src"]
+    }
   },
   "include": ["@types/**/*.ts", "packages/**/*.ts"]
 }

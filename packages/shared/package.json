@@ -1,8 +1,7 @@
 {
   "name": "@spd/shared",
   "version": "0.1.0",
-  "main": "./src/index.ts",
-  "license": "MIT",
-  "build": false,
-  "private": true
+  "main": "./dist/shared.js",
+  "types": "./dist/shared.d.js",
+  "license": "MIT"
 }
