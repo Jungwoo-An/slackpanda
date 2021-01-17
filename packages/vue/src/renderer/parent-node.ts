@@ -1,4 +1,4 @@
-import { IElement, Node } from '@spd/shared';
+import { IElement, Node } from '@slackpanda/shared';
 
 function parentNode(node: Node): IElement | null {
   return node.parentNode;

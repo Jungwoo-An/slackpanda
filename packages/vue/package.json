@@ -1,7 +1,7 @@
 {
-  "name": "@spd/vue",
+  "name": "@slackpanda/vue",
   "version": "0.1.0",
-  "description": "Vue client of @spd packages",
+  "description": "Vue client of @slackpanda packages",
   "main": "./dist/vue.js",
   "types": "./dist/vue.d.js",
   "files": [
@@ -24,7 +24,7 @@
     "vue": "^3.0.0"
   },
   "peerDependencies": {
-    "@spd/core": "*",
-    "@spd/shared": "*"
+    "@slackpanda/core": "*",
+    "@slackpanda/shared": "*"
   }
 }

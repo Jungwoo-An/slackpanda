@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { FixMe, generateNonce, IDatePickerAction } from '@spd/shared';
+import { FixMe, generateNonce, IDatePickerAction } from '@slackpanda/shared';
 
 export default defineComponent({
   name: 'PbDatePicker',

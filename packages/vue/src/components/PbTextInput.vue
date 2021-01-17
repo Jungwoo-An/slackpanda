@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { generateNonce } from '@spd/shared';
+import { generateNonce } from '@slackpanda/shared';
 
 export default defineComponent({
   name: 'PbTextInput',

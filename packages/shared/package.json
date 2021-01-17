@@ -1,7 +1,7 @@
 {
-  "name": "@spd/shared",
+  "name": "@slackpanda/shared",
   "version": "0.1.0",
-  "description": "Internal utils of @spd packages",
+  "description": "Internal utils of @slackpanda packages",
   "main": "./dist/shared.js",
   "types": "./dist/shared.d.js",
   "files": [

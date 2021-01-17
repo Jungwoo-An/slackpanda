@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent, toRefs } from 'vue';
-import { FixMe, generateNonce } from '@spd/shared';
+import { FixMe, generateNonce } from '@slackpanda/shared';
 
 export default defineComponent({
   name: 'PbModal',

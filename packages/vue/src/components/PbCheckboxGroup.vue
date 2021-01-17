@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { FixMe, generateNonce, ICheckboxGroupAction } from '@spd/shared';
+import { FixMe, generateNonce, ICheckboxGroupAction } from '@slackpanda/shared';
 
 export default defineComponent({
   name: 'PbCheckboxGroup',

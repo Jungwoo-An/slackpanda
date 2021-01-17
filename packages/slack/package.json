@@ -1,6 +1,6 @@
 {
-  "name": "@spd/slack",
-  "description": "Slack adapter of @spd packages",
+  "name": "@slackpanda/slack",
+  "description": "Slack adapter of @slackpanda packages",
   "main": "./dist/slack.js",
   "types": "./dist/slack.d.js",
   "files": [
@@ -23,6 +23,6 @@
     "@slack/web-api": "^5.14.0"
   },
   "peerDependencies": {
-    "@spd/shared": "*"
+    "@slackpanda/shared": "*"
   }
 }

@@ -1,4 +1,4 @@
-import { IClientAdapter } from '@spd/shared';
+import { IClientAdapter } from '@slackpanda/shared';
 
 import { emitter } from '../emitter';
 import { scheduler } from '../scheduler';

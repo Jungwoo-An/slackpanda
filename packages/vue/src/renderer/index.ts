@@ -1,5 +1,5 @@
 import { createRenderer } from '@vue/runtime-core';
-import { Node, IElement } from '@spd/shared';
+import { Node, IElement } from '@slackpanda/shared';
 
 import createElement from './create-element';
 import createText from './create-text';

@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { FixMe, generateNonce, IRadioGroupAction } from '@spd/shared';
+import { FixMe, generateNonce, IRadioGroupAction } from '@slackpanda/shared';
 
 export default defineComponent({
   name: 'PbRadioGroup',

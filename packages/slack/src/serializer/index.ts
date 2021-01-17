@@ -1,4 +1,4 @@
-import { IElement, Node, NodeTypes, TagTypes } from '@spd/shared';
+import { IElement, Node, NodeTypes, TagTypes } from '@slackpanda/shared';
 
 import actions from './actions';
 import button from './button';

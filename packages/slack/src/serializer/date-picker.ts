@@ -1,4 +1,4 @@
-import { IElement } from '@spd/shared';
+import { IElement } from '@slackpanda/shared';
 
 function datePicker(node: IElement) {
   return {

@@ -182,43 +182,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@spd/core@workspace:packages/core":
+"@slackpanda/core@workspace:packages/core":
   version: 0.0.0-use.local
-  resolution: "@spd/core@workspace:packages/core"
+  resolution: "@slackpanda/core@workspace:packages/core"
   dependencies:
     "@slack/interactive-messages": ^1.7.0
     "@slack/web-api": ^5.12.0
   peerDependencies:
-    "@spd/shared": "*"
+    "@slackpanda/shared": "*"
   languageName: unknown
   linkType: soft
 
-"@spd/shared@workspace:packages/shared":
+"@slackpanda/shared@workspace:packages/shared":
   version: 0.0.0-use.local
-  resolution: "@spd/shared@workspace:packages/shared"
+  resolution: "@slackpanda/shared@workspace:packages/shared"
   languageName: unknown
   linkType: soft
 
-"@spd/slack@workspace:packages/slack":
+"@slackpanda/slack@workspace:packages/slack":
   version: 0.0.0-use.local
-  resolution: "@spd/slack@workspace:packages/slack"
+  resolution: "@slackpanda/slack@workspace:packages/slack"
   dependencies:
     "@slack/interactive-messages": ^1.7.0
     "@slack/web-api": ^5.14.0
   peerDependencies:
-    "@spd/shared": "*"
+    "@slackpanda/shared": "*"
   languageName: unknown
   linkType: soft
 
-"@spd/vue@workspace:packages/vue":
+"@slackpanda/vue@workspace:packages/vue":
   version: 0.0.0-use.local
-  resolution: "@spd/vue@workspace:packages/vue"
+  resolution: "@slackpanda/vue@workspace:packages/vue"
   dependencies:
     change-case: ^4.1.1
     vue: ^3.0.0
   peerDependencies:
-    "@spd/core": "*"
-    "@spd/shared": "*"
+    "@slackpanda/core": "*"
+    "@slackpanda/shared": "*"
   languageName: unknown
   linkType: soft
 

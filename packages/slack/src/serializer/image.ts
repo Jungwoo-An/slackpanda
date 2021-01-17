@@ -1,4 +1,4 @@
-import { IElement } from '@spd/shared';
+import { IElement } from '@slackpanda/shared';
 
 function image(node: IElement) {
   return {

@@ -5,7 +5,7 @@ import {
   TagTypes,
   IElement,
   IClientAdapter,
-} from '@spd/shared';
+} from '@slackpanda/shared';
 
 import { createApp } from '../renderer';
 

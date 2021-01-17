@@ -1,3 +1,3 @@
-import { UpdateScheduler } from '@spd/core';
+import { UpdateScheduler } from '@slackpanda/core';
 
 export const scheduler = new UpdateScheduler();

@@ -1,4 +1,4 @@
-import { Node } from '@spd/shared';
+import { Node } from '@slackpanda/shared';
 
 function remove(child: Node) {
   const { parentNode } = child;

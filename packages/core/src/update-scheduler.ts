@@ -1,4 +1,4 @@
-import { FixMe } from '@spd/shared';
+import { FixMe } from '@slackpanda/shared';
 
 export type CommitCallback = (app: FixMe) => void;
 

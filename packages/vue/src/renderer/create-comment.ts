@@ -1,4 +1,4 @@
-import { NodeTypes, IComment } from '@spd/shared';
+import { NodeTypes, IComment } from '@slackpanda/shared';
 
 function createComment(text: string): IComment {
   return {

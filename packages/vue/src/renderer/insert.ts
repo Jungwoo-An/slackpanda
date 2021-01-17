@@ -1,4 +1,10 @@
-import { Node, IElement, findRoot, NodeTypes, TagTypes } from '@spd/shared';
+import {
+  Node,
+  IElement,
+  findRoot,
+  NodeTypes,
+  TagTypes,
+} from '@slackpanda/shared';
 
 import { scheduler } from '../scheduler';
 

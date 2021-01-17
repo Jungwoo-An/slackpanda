@@ -1,4 +1,4 @@
-import { IText, NodeTypes } from '@spd/shared';
+import { IText, NodeTypes } from '@slackpanda/shared';
 
 function createText(text: string): IText {
   return {

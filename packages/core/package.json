@@ -1,7 +1,7 @@
 {
-  "name": "@spd/core",
+  "name": "@slackpanda/core",
   "version": "0.1.0",
-  "description": "Core of @spd packages",
+  "description": "Core of @slackpanda packages",
   "main": "./dist/core.js",
   "types": "./dist/core.d.js",
   "files": [
@@ -24,6 +24,6 @@
     "@slack/web-api": "^5.12.0"
   },
   "peerDependencies": {
-    "@spd/shared": "*"
+    "@slackpanda/shared": "*"
   }
 }

@@ -8,7 +8,7 @@ import {
   IClientAdapterPayload,
   IElement,
   omitModal,
-} from '@spd/shared';
+} from '@slackpanda/shared';
 
 import { serialize } from './serializer';
 

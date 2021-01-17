@@ -1,4 +1,4 @@
-import { IElement, NodeTypes, TagTypes } from '@spd/shared';
+import { IElement, NodeTypes, TagTypes } from '@slackpanda/shared';
 
 import { serialize } from '.';
 

@@ -15,10 +15,10 @@
 
 ```bash
 # via npm
-$ npm install @spd/vue @spd/slack
+$ npm install @slackpanda/vue @slackpanda/slack
 
 # via yarn
-$ yarn add @spd/vue @spd/slack
+$ yarn add @slackpanda/vue @slackpanda/slack
 ```
 
 If you not have build command for .vue file, Recommend [vue3-node](https://github.com/Jungwoo-An/vue3-node) library.
@@ -63,7 +63,7 @@ import {
   PbSectionFields,
   PbText,
   PbActions,
-} from '@spd/vue';
+} from '@slackpanda/vue';
 
 export default defineComponent({
   name: 'VueIssues',
@@ -121,8 +121,8 @@ export default defineComponent({
 Create new client by calling function
 
 ```ts
-const { createClient } = require('@spd/vue');
-const { SlackAdapter } = require('@spd/slack');
+const { createClient } = require('@slackpanda/vue');
+const { SlackAdapter } = require('@slackpanda/slack');
 
 const adapter = new SlackAdapter({
   apiToken: process.env.SLACK_API_TOKEN,

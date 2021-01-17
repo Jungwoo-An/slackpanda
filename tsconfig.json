@@ -9,7 +9,7 @@
     "declaration": true,
     "baseUrl": ".",
     "paths": {
-      "@spd/*": ["packages/*/src"]
+      "@slackpanda/*": ["packages/*/src"]
     }
   },
   "include": ["@types/**/*.ts", "packages/**/*.ts"]

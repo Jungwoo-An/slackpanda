@@ -1,4 +1,4 @@
-import { findRoot, IText } from '@spd/shared';
+import { findRoot, IText } from '@slackpanda/shared';
 
 import { scheduler } from '../scheduler';
 

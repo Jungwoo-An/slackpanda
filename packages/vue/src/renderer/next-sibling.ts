@@ -1,4 +1,4 @@
-import { Node } from '@spd/shared';
+import { Node } from '@slackpanda/shared';
 
 function nextSibling(node: Node): Node | null {
   const { parentNode } = node;

@@ -1,4 +1,4 @@
-import { findRoot, IElement, NodeTypes } from '@spd/shared';
+import { findRoot, IElement, NodeTypes } from '@slackpanda/shared';
 
 import { scheduler } from '../scheduler';
 

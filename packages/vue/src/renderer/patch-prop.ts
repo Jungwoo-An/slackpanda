@@ -1,4 +1,4 @@
-import { IElement, ACTION_HANDLER_REGEX, findRoot } from '@spd/shared';
+import { IElement, ACTION_HANDLER_REGEX, findRoot } from '@slackpanda/shared';
 
 import { camelCase } from 'change-case';
 

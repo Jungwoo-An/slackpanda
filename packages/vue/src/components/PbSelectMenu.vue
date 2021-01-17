@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { FixMe, generateNonce, ISelectMenuAction } from '@spd/shared';
+import { FixMe, generateNonce, ISelectMenuAction } from '@slackpanda/shared';
 
 export default defineComponent({
   name: 'PbSelectMenu',
