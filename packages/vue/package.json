@@ -1,6 +1,6 @@
 {
   "name": "@slackpanda/vue",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Vue client of @slackpanda packages",
   "main": "./dist/vue.js",
   "types": "./dist/vue.d.js",
@@ -20,11 +20,9 @@
   "author": "Jungwoo-An <o1o9814@naver.com>",
   "license": "MIT",
   "dependencies": {
+    "@slackpanda/core": "workspace:packages/core",
+    "@slackpanda/shared": "workspace:packages/shared",
     "change-case": "^4.1.1",
     "vue": "^3.0.0"
-  },
-  "peerDependencies": {
-    "@slackpanda/core": "*",
-    "@slackpanda/shared": "*"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@slackpanda/slack",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Slack adapter of @slackpanda packages",
   "main": "./dist/slack.js",
   "types": "./dist/slack.d.js",
@@ -21,9 +21,8 @@
   "license": "MIT",
   "dependencies": {
     "@slack/interactive-messages": "^1.7.0",
-    "@slack/web-api": "^5.14.0"
-  },
-  "peerDependencies": {
-    "@slackpanda/shared": "*"
+    "@slack/web-api": "^5.14.0",
+    "@slackpanda/shared": "workspace:packages/shared",
+    "add": "^2.0.6"
   }
 }

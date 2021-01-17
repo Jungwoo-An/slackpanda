@@ -205,8 +205,8 @@ __metadata:
   dependencies:
     "@slack/interactive-messages": ^1.7.0
     "@slack/web-api": ^5.14.0
-  peerDependencies:
-    "@slackpanda/shared": "*"
+    "@slackpanda/shared": "workspace:packages/shared"
+    add: ^2.0.6
   languageName: unknown
   linkType: soft
 
@@ -214,11 +214,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@slackpanda/vue@workspace:packages/vue"
   dependencies:
+    "@slackpanda/core": "workspace:packages/core"
+    "@slackpanda/shared": "workspace:packages/shared"
     change-case: ^4.1.1
     vue: ^3.0.0
-  peerDependencies:
-    "@slackpanda/core": "*"
-    "@slackpanda/shared": "*"
   languageName: unknown
   linkType: soft
 
@@ -624,6 +623,13 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 2bde98c28c1be9a08e41e581179b776b43396c9486ce52b2b9848d73c53df38c516b7edba4bacdc84cabc9d7a3299f3b46ef240ae261c38dbf8ddd89f635bd32
+  languageName: node
+  linkType: hard
+
+"add@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "add@npm:2.0.6"
+  checksum: 8599798e63565ee9acb4c0d79485501a60450491c47830fa7bee6ad4f311a880e8f8417deeb69804dbb54765246fd704d3e34fa4ab1b57ed70ae00344ee9d00f
   languageName: node
   linkType: hard
 

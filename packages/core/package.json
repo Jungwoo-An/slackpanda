@@ -1,6 +1,6 @@
 {
   "name": "@slackpanda/core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Core of @slackpanda packages",
   "main": "./dist/core.js",
   "types": "./dist/core.d.js",
