@@ -15,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jungwoo-An/slackpanda.git",
-    "directory": "packages/shared"
+    "directory": "packages/vue"
   },
   "author": "Jungwoo-An <o1o9814@naver.com>",
   "license": "MIT",
