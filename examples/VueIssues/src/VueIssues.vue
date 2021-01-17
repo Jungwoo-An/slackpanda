@@ -24,7 +24,7 @@ import {
   PbSectionFields,
   PbText,
   PbActions,
-} from '../dist/vue';
+} from '@slackpanda/vue';
 
 export default defineComponent({
   name: 'VueIssues',

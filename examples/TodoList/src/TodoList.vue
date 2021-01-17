@@ -49,7 +49,7 @@ import {
   PbText,
   PbCheckboxGroup,
   PbCheckbox,
-} from '../dist/vue';
+} from '@slackpanda/vue';
 
 export default defineComponent({
   name: 'TodoList',

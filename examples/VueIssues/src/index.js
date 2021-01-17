@@ -1,5 +1,5 @@
-const { createClient } = require('../dist/vue');
-const { SlackAdapter } = require('../dist/slack');
+const { createClient } = require('@slackpanda/vue');
+const { SlackAdapter } = require('@slackpanda/slack');
 
 const VueIssues = require('./VueIssues.vue');
 
