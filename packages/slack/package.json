@@ -1,7 +1,23 @@
 {
   "name": "@spd/slack",
+  "description": "Slack adapter of @spd packages",
   "main": "./dist/slack.js",
   "types": "./dist/slack.d.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vue",
+    "vue-slack",
+    "slack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jungwoo-An/slackpanda.git",
+    "directory": "packages/shared"
+  },
+  "author": "Jungwoo-An <o1o9814@naver.com>",
+  "license": "MIT",
   "dependencies": {
     "@slack/interactive-messages": "^1.7.0",
     "@slack/web-api": "^5.14.0"

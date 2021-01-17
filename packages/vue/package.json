@@ -1,8 +1,23 @@
 {
   "name": "@spd/vue",
   "version": "0.1.0",
+  "description": "Vue client of @spd packages",
   "main": "./dist/vue.js",
   "types": "./dist/vue.d.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vue",
+    "vue-slack",
+    "slack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jungwoo-An/slackpanda.git",
+    "directory": "packages/shared"
+  },
+  "author": "Jungwoo-An <o1o9814@naver.com>",
   "license": "MIT",
   "dependencies": {
     "change-case": "^4.1.1",

@@ -1,7 +1,22 @@
 {
   "name": "@spd/shared",
   "version": "0.1.0",
+  "description": "Internal utils of @spd packages",
   "main": "./dist/shared.js",
   "types": "./dist/shared.d.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vue",
+    "vue-slack",
+    "slack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jungwoo-An/slackpanda.git",
+    "directory": "packages/shared"
+  },
+  "author": "Jungwoo-An <o1o9814@naver.com>",
   "license": "MIT"
 }
