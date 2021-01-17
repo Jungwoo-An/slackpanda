@@ -24,7 +24,7 @@
     "vue": "^3.0.0"
   },
   "peerDependencies": {
-    "@spd/core": "workspace:packages/core",
-    "@spd/shared": "workspace:packages/shared"
+    "@spd/core": "*",
+    "@spd/shared": "*"
   }
 }

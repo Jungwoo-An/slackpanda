@@ -23,6 +23,6 @@
     "@slack/web-api": "^5.14.0"
   },
   "peerDependencies": {
-    "@spd/shared": "workspace:packages/shared"
+    "@spd/shared": "*"
   }
 }
