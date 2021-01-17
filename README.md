@@ -8,8 +8,8 @@
 
 <p>Slackpanda provides UI building experience same as web in the slack. If you know Vue3, You can use awesome reactivity system of vue 3.</p>
 
-[![npm version](https://badge.fury.io/js/slackpanda.svg)](https://badge.fury.io/js/slackpanda)
-![LICENSE](https://img.shields.io/npm/l/slackpanda?color=blue)
+[![npm version](https://badge.fury.io/js/%40slackpanda%2Fcore.svg)](https://badge.fury.io/js/%40slackpanda%2Fcore)
+![LICENSE](https://img.shields.io/npm/l/%40slackpanda%2Fcore?color=blue)
 
 ## Setup
 
