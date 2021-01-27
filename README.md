@@ -161,6 +161,7 @@ Works fine!
 
 ## Examples
 
+- [PingPong](examples/PingPong) - PingPong
 - [VueIssues](examples/VueIssues) - Show issues of vue.js repository with pagination
 - [TodoList](examples/TodoList) - ⏰ 🤖
 
