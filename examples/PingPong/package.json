@@ -1,0 +1,16 @@
+{
+  "name": "pingpong",
+  "version": "1.0.0",
+  "description": "Slackpanda example project",
+  "scripts": {
+    "dev": "NODE_ENV=production node -r vue3-node src/index.js"
+  },
+  "dependencies": {
+    "@slackpanda/slack": "^0.1.0",
+    "@slackpanda/vue": "^0.1.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "vue": "^3.0.4",
+    "vue3-node": "^0.1.3"
+  }
+}
