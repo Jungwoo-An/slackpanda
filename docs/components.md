@@ -32,7 +32,7 @@
 <pb-header>This is header block</pb-header>
 ```
 
-![header](assets/components/header.png)
+<img src="assets/components/header.png" width="200">
 
 ### `PbImage`
 
@@ -51,7 +51,7 @@
 <pb-image src="vue.png" alt="Logo" />
 ```
 
-![image](assets/components/image.png)
+<img src="assets/components/image.png" width="100">
 
 ### `PbFormItem`
 
@@ -74,7 +74,7 @@
 </pb-form-item>
 ```
 
-![form-item](assets/components/form-item.png)
+<img src="assets/components/form-item.png" width="300">
 
 ### `PbSection`
 
@@ -105,7 +105,7 @@
 </pb-section-fields>
 ```
 
-![section-fields](assets/components/section-fields.png)
+<img src="assets/components/section-fields.png" width="300">
 
 ### `PbSectionAccessory`
 
@@ -119,7 +119,7 @@
 </pb-section>
 ```
 
-![section-accessory](assets/components/section-accessory.png)
+<img src="assets/components/section-accessory.png" width="400">
 
 ### `PbButton`
 
@@ -144,7 +144,7 @@
 <pb-button>Button</pb-button>
 ```
 
-![button](assets/components/button.png)
+<img src="assets/components/button.png" width="100">
 
 ### `PbCheckboxGroup`
 
@@ -245,7 +245,7 @@ A group of PbRadioButton
 <pb-date-picker value="2020-10-15" />
 ```
 
-![date-picker](assets/components/date-picker.png)
+<img src="assets/components/date-picker.png" width="200">
 
 ### `PbSelectMenu`
 
@@ -273,7 +273,7 @@ A PbSelectMenu allows user to select multiple items from a group of PbOption
 </pb-select-menu>
 ```
 
-![select-menu](assets/components/select-menu.png)
+<img src="assets/components/select-menu.png" width="200">
 
 ### `PbText`
 
