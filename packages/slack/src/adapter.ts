@@ -13,6 +13,7 @@ import {
 import { serialize } from './serializer';
 
 type HandlerType = (...args: any[]) => any;
+
 export class SlackAdapter implements IClientAdapter {
   private _listeners = new Map<string, HandlerType[]>();
 
