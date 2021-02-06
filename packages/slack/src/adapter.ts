@@ -8,6 +8,7 @@ import {
   IClientAdapterPayload,
   IElement,
   omitModal,
+  NotEnoughParameterError,
 } from '@slackpanda/shared';
 
 import { serialize } from './serializer';
@@ -83,8 +84,9 @@ export class SlackAdapter implements IClientAdapter {
 
   public async sendMessage({ text, node, channelId }: IClientAdapterPayload) {
     if (!node && !text) {
-      // TODO :: Create error class
-      throw new Error('Required paramter text or node was null or undefined');
+      throw new NotEnoughParameterError(
+        'Required paramter text or node was null or undefined'
+      );
     }
 
     if (text) {
@@ -115,13 +117,16 @@ export class SlackAdapter implements IClientAdapter {
 
   public async updateMessage(node: IElement) {
     if (!node) {
-      // TODO :: Create error class
-      throw new Error('Required paramter node was null or undefined');
+      throw new NotEnoughParameterError(
+        'Required paramter node was null or undefined'
+      );
     }
 
     const conversation = this._conversations.get(node!);
     if (!conversation) {
-      throw new Error('sendMessage must be called before updateMessage');
+      throw new NotEnoughParameterError(
+        'sendMessage must be called before updateMessage'
+      );
     }
 
     const blocks = serialize({
