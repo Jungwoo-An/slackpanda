@@ -10,6 +10,9 @@
       "pragma": "h"
     }
   },
+  "env": {
+    "mocha": true
+  },
   "rules": {
     "eol-last": "off",
     "no-unused-vars": "off",
