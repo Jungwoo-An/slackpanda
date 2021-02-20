@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "build": "node ./scripts/commands/build",
-    "dev": "node ./scripts/commands/dev"
+    "dev": "node ./scripts/commands/dev",
+    "test": "TS_NODE_PROJECT=./tsconfig.test.json TS_NODE_FILES=true mocha --require vue3-node --require ts-node/register './packages/**/tests/**/*.spec.ts'"
   },
   "workspaces": [
     "packages/*"
