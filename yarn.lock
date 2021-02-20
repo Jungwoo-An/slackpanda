@@ -231,6 +231,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/chai@npm:^4.2.15":
+  version: 4.2.15
+  resolution: "@types/chai@npm:4.2.15"
+  checksum: 671073ece087a7e336f8f32a09713deecc298fab50b51778c5496781f6ee7075c0fe1e6566407fa8da19e231f292353582eab4fc88ec439e83ace90781ae5991
+  languageName: node
+  linkType: hard
+
 "@types/connect@npm:*":
   version: 3.4.34
   resolution: "@types/connect@npm:3.4.34"
@@ -355,6 +362,13 @@ __metadata:
   version: 3.0.3
   resolution: "@types/minimatch@npm:3.0.3"
   checksum: 672ccdac197e8176eed1a9441d0caf8a29a90eb139b1cefdd4c9e71b1c48f5c749f5d101a2d85da15c6259214ebda95072835021407d60330a731a2672964b82
+  languageName: node
+  linkType: hard
+
+"@types/mocha@npm:^8.2.1":
+  version: 8.2.1
+  resolution: "@types/mocha@npm:8.2.1"
+  checksum: 43585ae2a1034e8f868db181439caf49d1f17b524b3dfdb767a69966965046249f6929f807c1c94e87b21c17abdee5298134053e059a9c08aaac04bff93707e0
   languageName: node
   linkType: hard
 
@@ -861,6 +875,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"assertion-error@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "assertion-error@npm:1.1.0"
+  checksum: 7bbc9fa2ff51618b0ea3c4ae13dbafe6dfb71b11c267aa93c749489355f55d0b844403bfc3dc8b9a98b0f21837fa2b59191c8a8f76e65303d06498fab4867f4c
+  languageName: node
+  linkType: hard
+
 "astral-regex@npm:^2.0.0":
   version: 2.0.0
   resolution: "astral-regex@npm:2.0.0"
@@ -1034,6 +1055,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chai@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "chai@npm:4.3.0"
+  dependencies:
+    assertion-error: ^1.1.0
+    check-error: ^1.0.2
+    deep-eql: ^3.0.1
+    get-func-name: ^2.0.0
+    pathval: ^1.1.0
+    type-detect: ^4.0.5
+  checksum: 7b9930bb65876996197218786fee6112d366a6f52fe9c5efb1f9e742724c20effc39d1394adbdb3d17d96faabe0ba53ab6c0c61ba7c4e166ec2a888b46e0bdca
+  languageName: node
+  linkType: hard
+
 "chalk@npm:^2.0.0, chalk@npm:^2.4.2":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
@@ -1072,6 +1107,13 @@ __metadata:
     snake-case: ^3.0.4
     tslib: ^2.0.3
   checksum: dfc3d5afcb442b8dfabfd2068d9e845b396f98ba72f4b2c702b8afe935e56d6a0b48281866f91fe77cf669d99bfea6176079d5d1033f6ce574c6a97a5862bcf9
+  languageName: node
+  linkType: hard
+
+"check-error@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "check-error@npm:1.0.2"
+  checksum: 1460ad12da600b277575f53b7512d6e59005a34e3235ae62cfe12ff5d83b68a6ff568841907eb5f041c3f468d1385ea9fcfd22344df02175d28ea8a8b9330940
   languageName: node
   linkType: hard
 
@@ -1327,6 +1369,15 @@ __metadata:
   version: 4.0.0
   resolution: "decamelize@npm:4.0.0"
   checksum: 3846161a3b6ba7043dd0e8cb8101676fcbd92a60bd228e63fe17116ebfaddff8d730e33c9e93a9e02c049c53e0e37013174225f27b95bb21d703359999a4aab9
+  languageName: node
+  linkType: hard
+
+"deep-eql@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "deep-eql@npm:3.0.1"
+  dependencies:
+    type-detect: ^4.0.0
+  checksum: eff42bc2d4d889dec8fd925fa9c013fa4d641842b98b502f436b9f2865460c8330f79fb7dbdb924a1e844b97b40843ed952f3847fb1e388a35bd4ef6e3d64184
   languageName: node
   linkType: hard
 
@@ -2076,6 +2127,13 @@ fsevents@~2.3.1:
   version: 2.0.5
   resolution: "get-caller-file@npm:2.0.5"
   checksum: 9dd9e1e2591039ee4c38c897365b904f66f1e650a8c1cb7b7db8ce667fa63e88cc8b13282b74df9d93de481114b3304a0487880d31cd926dfda6efe71455855d
+  languageName: node
+  linkType: hard
+
+"get-func-name@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "get-func-name@npm:2.0.0"
+  checksum: c72d3857cd05338fc61e52c385da67d553e42c226e141da11684aecb3e017a753bf7120411731fbc30768edf68f9c359dc202757703b3a851da54b2b17a9828d
   languageName: node
   linkType: hard
 
@@ -3344,6 +3402,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"pathval@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "pathval@npm:1.1.1"
+  checksum: 81cd01d46cd0cd90fb7a8e0d576f8cb4cbbd0832ed00da14362be32ad79e855cf8ecf7e92fc0c267fdfc2766bd1d8fb3de43a51081e142ffb1fc814958fb8d8f
+  languageName: node
+  linkType: hard
+
 "performance-now@npm:^2.1.0":
   version: 2.1.0
   resolution: "performance-now@npm:2.1.0"
@@ -3899,9 +3964,12 @@ resolve@1.17.0:
   resolution: "slackpanda@workspace:."
   dependencies:
     "@rollup/plugin-node-resolve": ^11.0.1
+    "@types/chai": ^4.2.15
+    "@types/mocha": ^8.2.1
     "@typescript-eslint/eslint-plugin": ^4.3.0
     "@typescript-eslint/parser": ^4.3.0
     "@vue/compiler-sfc": ^3.0.4
+    chai: ^4.3.0
     chalk: ^4.1.0
     eslint: ^7.10.0
     eslint-config-airbnb-base: ^14.2.0
@@ -4370,6 +4438,13 @@ resolve@1.17.0:
   dependencies:
     prelude-ls: ^1.2.1
   checksum: 6c2e1ce339567e122504f0c729cfa35d877fb2da293b99110f0819eca81e6ed8d3ba9bb36c0bc0ee4904d5340dbe678f8642a395c1c67b1d0f69f081efb47f4a
+  languageName: node
+  linkType: hard
+
+"type-detect@npm:^4.0.0, type-detect@npm:^4.0.5":
+  version: 4.0.8
+  resolution: "type-detect@npm:4.0.8"
+  checksum: e01dc6ac9098192a7859fb86c7b4073709a4e13a5cc02c54d54412378bb099563fda7a7a85640f33e3a7c2e8189182eb1511f263e67f402b2d63fe81afdde785
   languageName: node
   linkType: hard
 
